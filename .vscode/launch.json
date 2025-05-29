@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:3000", // Change to your actual dev server port
+            "webRoot": "${workspaceFolder}/src", // Use /src for React/Vue, or just ${workspaceFolder} if unsure
+            "breakOnLoad": true,
+            "sourceMaps": true,
+            "trace": true
+        }
+    ]
+}
