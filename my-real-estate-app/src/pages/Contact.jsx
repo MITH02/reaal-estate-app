@@ -90,14 +90,13 @@ const Contact = () => {
     setIsSubmitting(true);
     try {
       // TODO: Replace with your actual API endpoint
-      const response = await fetch('http://localhost:8085/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
+		const response = await fetch('https://agastyabuilder-elci.onrender.com/api/contact', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(formData),
+		});
       if (response.ok) {
         setSubmitSuccess(true);
         setFormData({
