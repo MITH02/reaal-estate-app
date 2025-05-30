@@ -108,7 +108,7 @@ const VishalPinnacleProject = () => {
       {/* Contact Information */}
       <div className="section-padding" style={{ maxWidth: 700, margin: '2.5rem auto 0', borderTop: '1px solid var(--divider-color, #444)', paddingTop: '2rem', color: 'var(--text-color)' }}>
         <div style={{ fontWeight: 600, marginBottom: 8, fontSize: '1.1rem' }}>Contact Information</div>
-        <div style={{ marginBottom: 6 }}>Email : <a href="mailto:agastyabuildersanddevelopers@gmail.com" style={{ color: 'var(--link-color, #3498db)' }}>agastyabuildersanddevelopers@gmail.com</a></div>
+        <div style={{ marginBottom: 6 }}>Email : <a href="mailto:info@agastyabuildersanddevelopers.com" style={{ color: 'var(--link-color, #3498db)' }}>info@agastyabuildersanddevelopers.com</a></div>
         <div style={{ marginBottom: 6 }}>
           Phone : 
           <a href="tel:+917559378178" style={{ color: '#3498db', marginRight: 8 }}>+91 7559378178</a>,
