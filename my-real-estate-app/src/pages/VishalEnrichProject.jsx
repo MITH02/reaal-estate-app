@@ -27,7 +27,7 @@ const VishalEnrichProject = () => {
   return (
     <div className="main-content" style={{ background: 'var(--background-color)', minHeight: '100vh', color: 'var(--text-color)' }}>
       <div className="section-padding" style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-        <img src="/images/buildings/building1.png" alt="Vishal Enrich Apartments" style={{ maxWidth: 400, width: '100%', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.10)', marginBottom: '2rem', objectFit: 'cover', height: '400px' }} />
+        <img src="/images/buildings/building1.jpg" alt="Vishal Enrich Apartments" style={{ maxWidth: 400, width: '100%', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.10)', marginBottom: '2rem', objectFit: 'cover', height: '400px' }} />
       </div>
       <h1 className="section-padding" style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-color)', marginBottom: '1.5rem' }}>
         Vishal Enrich Apartment

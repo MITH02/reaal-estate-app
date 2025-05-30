@@ -55,9 +55,9 @@ const About = () => {
   const [prevScrollY, setPrevScrollY] = useState(0);
 
   const buildingImages = [
-    '/images/buildings/building1.png',
+    '/images/buildings/building1.jpg',
     '/images/buildings/building2.jpg',
-    '/images/buildings/building3.png',
+    '/images/buildings/building3.jpg',
     '/images/buildings/building4.jpg'
   ];
 

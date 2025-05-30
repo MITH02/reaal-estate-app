@@ -5,7 +5,7 @@ const projects = [
   {
     id: 1,
     name: "Vishal Enrich",
-    image: "/images/buildings/building1.png",
+    image: "/images/buildings/building1.jpg",
     slug: "vishal-enrich"
   },
   {
@@ -17,7 +17,7 @@ const projects = [
   {
     id: 3,
     name: "Vishal Pinnacle",
-    image: "/images/buildings/building3.png",
+    image: "/images/buildings/building3.jpg",
     slug: "vishal-pinnacle"
   },
   {

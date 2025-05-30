@@ -44,7 +44,7 @@ const VishalPinnacleProject = () => {
         SOLD OUT
       </div>
       <div className="section-padding" style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-        <img src="/images/buildings/building3.png" alt="Vishal Pinnacle Apartments" style={{ maxWidth: 400, width: '100%', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.10)', marginBottom: '2rem', objectFit: 'cover', height: '400px' }} />
+        <img src="/images/buildings/building3.jpg" alt="Vishal Pinnacle Apartments" style={{ maxWidth: 400, width: '100%', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.10)', marginBottom: '2rem', objectFit: 'cover', height: '400px' }} />
       </div>
       <h1 className="section-padding" style={{ fontSize: '2.5rem', fontWeight: 800, color: 'var(--accent-color)', marginBottom: '1.5rem' }}>
         Vishal Pinnacle Apartments
