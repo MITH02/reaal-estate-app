@@ -1,12 +1,12 @@
 import React from "react";
 
 const propertyFeatures = [
-  "Open Sit-Out Area",
-  "Yoga Corner",
+  "Terrace Sit-Out Area",
+  "Vastu-Complaint Design",
   "Double-Height Entrance Lobby",
   "24x7 Security",
   "Modern Architecture",
-  "High-Speed Elevators",
+  "High-Speed Lifts",
   "Ample Parking",
   "Eco-Friendly Design",
   "And More..."
@@ -16,7 +16,7 @@ const nearbyLocations = [
   { name: "IT Park", time: "10 Minutes" },
   { name: "Shopping Mall", time: "8 Minutes" },
   { name: "Hospital", time: "4 Minutes" },
-  { name: "Airport", time: "18 Minutes" },
+  { name: "Airport", time: "10 Minutes" },
   { name: "Railway", time: "12 Minutes" },
   { name: "Market Area", time: "5 Minutes" },
   { name: "Metro Station", time: "9 Minutes" },

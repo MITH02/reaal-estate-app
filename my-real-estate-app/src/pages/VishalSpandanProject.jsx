@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 
 const propertyFeatures = [
   "Terrace Recreational Zone with Indoor Games",
-  "Open Sit-Out Area",
+  "Terrace Sit-Out Area",
+  "Vastu-Compliant Design",
   "Yoga Corner",
   "Double-Height Entrance Lobby",
   "Children's Play Area",
   "24x7 Security",
-  "Lift",
+  "High-Speed Lifts",
   "Dedicated Parking",
   "Modern Architecture",
   "Peaceful Residential Environment",
@@ -162,7 +163,7 @@ const VishalSpandanProject = () => {
           </p>
         </div>
         <div style={{ flex: '1 1 320px', minWidth: 260, textAlign: 'center' }}>
-          <img src="/images/VishalSpandanImage1.jpg" alt="Luxury Living" style={{ width: '100%', maxWidth: 350, borderRadius: 12, boxShadow: '0 4px 24px rgba(0,0,0,0.08)', objectFit: 'cover', height: '250px' }} />
+          <img src="/images/VishalSpandanImage1.JPG" alt="Luxury Living" style={{ width: '100%', maxWidth: 350, borderRadius: 12, boxShadow: '0 4px 24px rgba(0,0,0,0.08)', objectFit: 'cover', height: '250px' }} />
         </div>
       </div>
 
@@ -178,7 +179,7 @@ const VishalSpandanProject = () => {
         padding: '2rem 0'
       }}>
         <div style={{ flex: '1 1 320px', minWidth: 260, textAlign: 'center' }}>
-          <img src="/images/VishalSpandanImage2.jpg" alt="Dreams with Purpose" style={{ width: '100%', maxWidth: 350, borderRadius: 12, boxShadow: '0 4px 24px rgba(0,0,0,0.08)', objectFit: 'cover', height: '250px' }} />
+          <img src="/images/VishalSpandanImage2.JPG" alt="Dreams with Purpose" style={{ width: '100%', maxWidth: 350, borderRadius: 12, boxShadow: '0 4px 24px rgba(0,0,0,0.08)', objectFit: 'cover', height: '250px' }} />
         </div>
         <div style={{ flex: '1 1 320px', minWidth: 260 }}>
           <h2 style={{ fontFamily: 'serif', fontWeight: 500, fontSize: '2.2rem', marginBottom: '1rem' }}>
