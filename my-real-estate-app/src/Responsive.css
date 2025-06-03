@@ -260,7 +260,6 @@
   padding: 2rem 1rem 1rem 1rem;
   background: var(--background-color, #181818);
   color: var(--text-color, #fff);
-  max-width: 600px;
   margin: 0 auto;
 }
 
