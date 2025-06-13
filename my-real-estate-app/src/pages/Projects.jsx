@@ -1,5 +1,6 @@
 import React from "react";
 import ProjectCard from "../components/ProjectCard";
+import { useTheme } from '../context/ThemeContext';
 
 const projects = [
   {
@@ -29,13 +30,15 @@ const projects = [
 ];
 
 const Projects = () => {
+  const { isDarkTheme } = useTheme();
+
   return (
-    <div style={{
-      background: "#0a1929",
+    <div className={`projects-container ${isDarkTheme ? 'dark-theme' : 'light-theme'}`} style={{
+      background: isDarkTheme ? "#0a1929" : "#f0f0f0",
       minHeight: "100vh",
       padding: "40px 0"
     }}>
-      <h1 style={{ color: "#fff", textAlign: "center", marginBottom: 40 }}>All Projects</h1>
+      <h1 style={{ color: isDarkTheme ? "#fff" : "#333", textAlign: "center", marginBottom: 40 }}>All Projects</h1>
       <div style={{
         display: "flex",
         flexWrap: "wrap",

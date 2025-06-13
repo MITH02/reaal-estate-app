@@ -1,0 +1,50 @@
+.project-card {
+  border-radius: 16px;
+  padding: 24px;
+  margin: 24px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+}
+
+/* Styles for dark theme when parent has dark-theme class */
+.dark-theme .project-card {
+  background: #11202e;
+  color: #fff;
+}
+
+/* Styles for light theme when parent has light-theme class */
+.light-theme .project-card {
+  background: #f0f0f0; /* Example light theme background color */
+  color: #333; /* Example light theme text color */
+}
+
+.project-card-image {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  height: 350px; /* Keep the height consistent */
+}
+
+.project-card-title {
+  margin: 16px 0 8px 0;
+}
+
+.project-card-button {
+  background: none;
+  color: #00bcd4; /* Keep the button color consistent or make it theme-dependent if needed */
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.project-card-button-arrow {
+  margin-left: 8px;
+  font-size: 22px;
+} 

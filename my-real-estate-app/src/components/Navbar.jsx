@@ -9,20 +9,17 @@ const Navbar = () => {
   const handleMenuToggle = () => setMenuOpen((open) => !open);
   const handleLinkClick = () => setMenuOpen(false);
 
+  const logoSrc = isDarkTheme ? "/images/logo1.png" : "/images/logo.png";
+  const logoAlt = "Agastya Builders Logo";
+
   return (
     <nav className="navbar">
       <div className="nav-brand">
         <Link to="/">
           <img
-            src="/images/logo.png"
-            alt="Agastya Builders Logo"
-            className="logo logo-light-theme"
-            style={{ height: '40px', marginRight: '1rem', objectFit: 'cover' }}
-          />
-          <img
-            src="/images/logo1.png"
-            alt="Agastya Builders Logo"
-            className="logo logo-dark-theme"
+            src={logoSrc}
+            alt={logoAlt}
+            className="logo"
             style={{ height: '40px', marginRight: '1rem', objectFit: 'cover' }}
           />
           <span className="brand-name">Agastya Builders</span>
