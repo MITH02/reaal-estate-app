@@ -15,7 +15,7 @@ export const ThemeProvider = ({ children }) => {
     // Dynamically update favicon
     const favicon = document.querySelector("link[rel='icon']");
     if (favicon) {
-      favicon.href = isDarkTheme ? `${process.env.PUBLIC_URL}/logo1.png` : `${process.env.PUBLIC_URL}/logo.png`;
+      favicon.href = `${process.env.PUBLIC_URL}/logo.png`;
     }
   }, [isDarkTheme]);
 

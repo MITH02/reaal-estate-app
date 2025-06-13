@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="footer-main-col">
           <div className="footer-logo-wrap">
             <img
-              src={isDarkTheme ? "/images/logo1.png" : "/images/logo.png"}
+              src={isDarkTheme ? "/images/logo.png" : "/images/logo.png"}
               alt="Agastya Builders Logo"
               className="footer-logo"
             />

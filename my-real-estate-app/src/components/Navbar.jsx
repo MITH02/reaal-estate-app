@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleMenuToggle = () => setMenuOpen((open) => !open);
   const handleLinkClick = () => setMenuOpen(false);
 
-  const logoSrc = isDarkTheme ? "/images/logo1.png" : "/images/logo.png";
+  const logoSrc = isDarkTheme ? "/images/logo.png" : "/images/logo.png";
   const logoAlt = "Agastya Builders Logo";
 
   return (
