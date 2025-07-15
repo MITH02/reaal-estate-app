@@ -34,7 +34,7 @@ const VishalClassicProject = () => {
       </h1>
       <h3 className="section-padding" style={{ fontWeight: 500, fontSize: '1.2rem', marginBottom: '1.5rem' }}>
         <i className="fas fa-map-marker-alt" style={{ color: 'var(--icon-color, #3498db)', marginRight: 8 }}></i>
-        Plot No. 28, Indraprastha Co-operative Housing Society, Near London Street, Nagpur
+		  Plot no 86, Indraprastha nagar Pannase Layout, Near London Street, Nagpur
       </h3>
 
       {/* Price Section */}
