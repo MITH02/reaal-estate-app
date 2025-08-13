@@ -53,11 +53,31 @@
   align-items: center;
   gap: var(--space-3);
   text-decoration: none;
-  transition: transform var(--transition-fast);
+  transition: all var(--transition-base);
+  padding: var(--space-2);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.brand-link:hover::before {
+  left: 100%;
 }
 
 .brand-link:hover {
   transform: scale(1.02);
+  background: rgba(37, 99, 235, 0.05);
 }
 
 .logo {
