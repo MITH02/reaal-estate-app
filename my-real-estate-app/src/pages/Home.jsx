@@ -91,22 +91,41 @@ const Home = () => {
     <>
       {/* Video Section - now outside main-content for true full-bleed */}
       <section className="video-section">
-        <video
-          ref={videoRef}
-          className="hero-video"
-          src="/images/VideoPintrestt.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          style={{
-            width: '100vw',
-            height: '100vh',
-            objectFit: 'cover',
-            background: 'black'
-          }}
-          onError={handleVideoError}
-        />
+        {!videoError ? (
+          <video
+            ref={videoRef}
+            className="hero-video"
+            src="/images/VideoPintrestt.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: '100vw',
+              height: '100vh',
+              objectFit: 'cover',
+              background: 'black'
+            }}
+            onError={handleVideoError}
+          />
+        ) : (
+          <div
+            className="hero-video-fallback"
+            style={{
+              width: '100vw',
+              height: '100vh',
+              background: `linear-gradient(
+                135deg,
+                rgba(52, 152, 219, 0.8) 0%,
+                rgba(44, 62, 80, 0.9) 50%,
+                rgba(52, 73, 94, 0.8) 100%
+              ), url('/images/VishalSpandanImage1.JPG') center/cover`,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          />
+        )}
         {/* Sound Toggle Button */}
         <button
           className="sound-toggle"
