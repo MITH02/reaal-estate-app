@@ -6,8 +6,8 @@
 
 /* Contact Information Cards */
 .contact-info-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-4);
   margin-bottom: var(--space-8);
 }
