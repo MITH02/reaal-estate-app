@@ -60,7 +60,7 @@ const Home = () => {
   }, [statsVisible]);
 
   const handleVideoError = () => {
-    console.error('Error loading video');
+    console.error('Error loading video: VideoPintrestt.mp4 may be corrupted or missing');
     setVideoError(true);
   };
 
