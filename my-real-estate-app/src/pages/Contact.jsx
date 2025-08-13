@@ -178,14 +178,15 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="hero-section" style={{
         background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)',
-        minHeight: '60vh',
+        minHeight: '50vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         color: 'var(--text-inverse)',
         textAlign: 'center',
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        padding: 'var(--space-8) 0'
       }}>
         <div className="container">
           <h1 className={`hero-title ${isVisible ? 'animate-fade-in' : ''}`}>
