@@ -95,7 +95,7 @@ const Home = () => {
           <video
             ref={videoRef}
             className="hero-video"
-            src="/images/VideoPintrestt.mp4"
+            src="https://cdn.builder.io/o/assets%2Fb706ac4975b94791890c8d3621c65cb4%2F15783be6f38f40f5a52e6f637da988b0?alt=media&token=5225cadd-d662-4e7f-b63d-73a33c8b5069&apiKey=b706ac4975b94791890c8d3621c65cb4"
             autoPlay
             muted
             loop
