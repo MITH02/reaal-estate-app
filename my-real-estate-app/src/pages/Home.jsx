@@ -126,18 +126,20 @@ const Home = () => {
             }}
           />
         )}
-        {/* Sound Toggle Button */}
-        <button
-          className="sound-toggle"
-          onClick={handleSoundToggle}
-          aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-        >
-          {isMuted ? (
-            <span role="img" aria-label="muted">🔇</span>
-          ) : (
-            <span role="img" aria-label="sound">🔊</span>
-          )}
-        </button>
+        {/* Sound Toggle Button - only show when video is working */}
+        {!videoError && (
+          <button
+            className="sound-toggle"
+            onClick={handleSoundToggle}
+            aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+          >
+            {isMuted ? (
+              <span role="img" aria-label="muted">🔇</span>
+            ) : (
+              <span role="img" aria-label="sound">🔊</span>
+            )}
+          </button>
+        )}
         {/* Overlay Content */}
         <div className="video-overlay-content">
           <h1>LUXURY &nbsp; QUALITY &nbsp; ELEGANCE</h1>
