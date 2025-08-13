@@ -1,60 +1,233 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
-import '../styles/Footer.css';
+import './Footer.css';
 
 const Footer = () => {
-  const { isDarkTheme } = useTheme();
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterStatus, setNewsletterStatus] = useState('');
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+    
+    // Simulate newsletter subscription
+    setNewsletterStatus('success');
+    setNewsletterEmail('');
+    setTimeout(() => setNewsletterStatus(''), 3000);
+  };
+
+  const socialLinks = [
+    {
+      platform: 'Instagram',
+      icon: '📷',
+      url: 'https://www.instagram.com/agastyabuildersanddevelopers',
+      handle: '@agastyabuildersanddevelopers'
+    },
+    {
+      platform: 'LinkedIn',
+      icon: '💼',
+      url: 'https://www.linkedin.com/company/agastyabuildersanddevelopers',
+      handle: 'Agastya Builders'
+    },
+    {
+      platform: 'Facebook',
+      icon: '👍',
+      url: 'https://www.facebook.com/agastyabuildersanddevelopers',
+      handle: 'Agastya Builders'
+    },
+    {
+      platform: 'YouTube',
+      icon: '📺',
+      url: 'https://www.youtube.com/@agastyabuildersanddevelopers',
+      handle: 'Agastya Builders'
+    }
+  ];
+
+  const quickLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Contact Us', path: '/contact' }
+  ];
+
+  const projectLinks = [
+    { name: 'Vishal Spandan', path: '/projects/vishal-spandan' },
+    { name: 'Vishal Enrich', path: '/projects/vishal-enrich' },
+    { name: 'Vishal Classic', path: '/projects/vishal-classic' },
+    { name: 'Vishal Pinnacle', path: '/projects/vishal-pinnacle' }
+  ];
+
+  const legalLinks = [
+    { name: 'Privacy Policy', path: '/privacy-policy' },
+    { name: 'Terms of Service', path: '/terms-of-service' },
+    { name: 'Disclaimer', path: '/disclaimer' }
+  ];
+
+  const contactInfo = {
+    address: 'BPCL Petrol pump, Matey Chowak, Maharashtra 440010',
+    phone: '+91 7559378178',
+    email: 'info@agastyabuildersanddevelopers.com',
+    hours: 'Mon - Sat: 10AM - 7PM'
+  };
 
   return (
     <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-main-col">
-          <div className="footer-logo-wrap">
-            <img
-              src={isDarkTheme ? "/images/logo.png" : "/images/logo.png"}
-              alt="Agastya Builders Logo"
-              className="footer-logo"
-            />
-            <span className="footer-company">AGASTYA BUILDERS PVT. LTD.</span>
-          </div>
-          <div className="social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <i className="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://instagram.com/agastyabuilder/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <i className="fab fa-instagram"></i>
-            </a>
-            <a href="https://linkedin.com/company/agastya-builders-developers-pvt-ltd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <i className="fab fa-youtube"></i>
-            </a>
-          </div>
-          <div className="footer-section">
-            <p>
-              We build homes with Trust, Quality, and Excellence. As the Best Construction and Builder Company in Nagpur, we deliver unmatched Luxury, Quality, and Simplicity in every project.
+      <div className="footer-container">
+        {/* Main Footer Content */}
+        <div className="footer-content">
+          {/* Company Info */}
+          <div className="footer-column footer-company">
+            <div className="footer-brand">
+              <img
+                src="/images/logo.png"
+                alt="Agastya Builders Logo"
+                className="footer-logo"
+              />
+              <div className="brand-text">
+                <h3 className="company-name">Agastya Builders</h3>
+                <p className="company-tagline">& Developers Pvt. Ltd.</p>
+              </div>
+            </div>
+            
+            <p className="company-description">
+              Building dreams with trust, quality, and excellence for over 30 years. 
+              We create luxurious homes that blend modern design with timeless elegance.
             </p>
+
+            {/* Newsletter Signup */}
+            <div className="newsletter-section">
+              <h4>Stay Updated</h4>
+              <p>Get latest updates on new projects and offers</p>
+              <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
+                <div className="newsletter-input-group">
+                  <input
+                    type="email"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="newsletter-input"
+                    required
+                  />
+                  <button type="submit" className="newsletter-button">
+                    Subscribe
+                  </button>
+                </div>
+                {newsletterStatus === 'success' && (
+                  <p className="newsletter-success">
+                    ✅ Thank you for subscribing!
+                  </p>
+                )}
+              </form>
+            </div>
+
+            {/* Social Links */}
+            <div className="social-section">
+              <h4>Follow Us</h4>
+              <div className="social-links">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.platform}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link"
+                    aria-label={`Follow us on ${social.platform}`}
+                    title={social.handle}
+                  >
+                    <span className="social-icon">{social.icon}</span>
+                    <span className="social-name">{social.platform}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="footer-column">
+            <h4 className="footer-title">Quick Links</h4>
+            <ul className="footer-links">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.path} className="footer-link">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Projects */}
+          <div className="footer-column">
+            <h4 className="footer-title">Our Projects</h4>
+            <ul className="footer-links">
+              {projectLinks.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.path} className="footer-link">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="footer-column">
+            <h4 className="footer-title">Contact Info</h4>
+            <div className="contact-info">
+              <div className="contact-item">
+                <span className="contact-icon">📍</span>
+                <p>{contactInfo.address}</p>
+              </div>
+              <div className="contact-item">
+                <span className="contact-icon">📞</span>
+                <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
+              </div>
+              <div className="contact-item">
+                <span className="contact-icon">✉️</span>
+                <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+              </div>
+              <div className="contact-item">
+                <span className="contact-icon">🕒</span>
+                <p>{contactInfo.hours}</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="quick-links">
-          <h3>Quick Links</h3>
-          <Link to="/">Home</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/projects">Projects</Link>
-          <Link to="/contact">Contact Us</Link>
-        </div>
-        <div className="legal">
-          <h3>Legal</h3>
-          <Link to="/privacy-policy">Privacy Policy</Link>
-          <Link to="/terms-of-service">Terms of Service</Link>
-          <Link to="/disclaimer">Disclaimer</Link>
+
+        {/* Footer Bottom */}
+        <div className="footer-bottom">
+          <div className="footer-bottom-content">
+            <div className="copyright">
+              <p>&copy; {new Date().getFullYear()} Agastya Builders & Developers Pvt. Ltd. All rights reserved.</p>
+            </div>
+            
+            <div className="legal-links">
+              {legalLinks.map((link, index) => (
+                <React.Fragment key={link.name}>
+                  <Link to={link.path} className="legal-link">
+                    {link.name}
+                  </Link>
+                  {index < legalLinks.length - 1 && <span className="separator">•</span>}
+                </React.Fragment>
+              ))}
+            </div>
+
+            <div className="certifications">
+              <span className="certification-badge">RERA Approved</span>
+              <span className="certification-badge">ISO Certified</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Agastya Builders Pvt. Ltd. All rights reserved.</p>
-      </div>
+
+      {/* Back to Top Button */}
+      <button 
+        className="back-to-top"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        aria-label="Back to top"
+      >
+        ↑
+      </button>
     </footer>
   );
 };
