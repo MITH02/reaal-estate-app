@@ -1,55 +1,99 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 
 const Navbar = () => {
   const { isDarkTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleMenuToggle = () => setMenuOpen((open) => !open);
   const handleLinkClick = () => setMenuOpen(false);
 
-  const logoSrc = isDarkTheme ? "/images/logo.png" : "/images/logo.png";
+  const logoSrc = "/images/logo.png";
   const logoAlt = "Agastya Builders Logo";
 
+  const navItems = [
+    { path: '/', label: 'Home' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/about', label: 'About Us' },
+    { path: '/contact', label: 'Contact Us' }
+  ];
+
   return (
-    <nav className="navbar">
-      <div className="nav-brand">
-        <Link to="/">
-          <img
-            src={logoSrc}
-            alt={logoAlt}
-            className="logo"
-            style={{ height: '40px', marginRight: '1rem', objectFit: 'cover' }}
-          />
-          <span className="brand-name">Agastya Builders</span>
-        </Link>
-      </div>
-      <div className="nav-links desktop-only">
-        <Link to="/" className="nav-link">Home</Link>
-        <Link to="/projects" className="nav-link">Projects</Link>
-        <Link to="/about" className="nav-link">About Us</Link>
-        <Link to="/contact" className="nav-link">Contact Us</Link>
-      </div>
-      <button className="hamburger mobile-only" onClick={handleMenuToggle} aria-label={menuOpen ? 'Close menu' : 'Open menu'}>
-        {menuOpen ? (
-          <span className="close-icon">&#10005;</span>
-        ) : (
-          <>
-            <span className="hamburger-bar"></span>
-            <span className="hamburger-bar"></span>
-            <span className="hamburger-bar"></span>
-          </>
-        )}
-      </button>
-      {menuOpen && (
-        <div className="mobile-menu">
-          <Link to="/" className="nav-link" onClick={handleLinkClick}>Home</Link>
-          <Link to="/projects" className="nav-link" onClick={handleLinkClick}>Projects</Link>
-          <Link to="/about" className="nav-link" onClick={handleLinkClick}>About Us</Link>
-          <Link to="/contact" className="nav-link" onClick={handleLinkClick}>Contact Us</Link>
+    <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+      <div className="navbar-container">
+        <div className="nav-brand">
+          <Link to="/" className="brand-link">
+            <img
+              src={logoSrc}
+              alt={logoAlt}
+              className="logo"
+            />
+            <div className="brand-text">
+              <span className="brand-name">Agastya</span>
+              <span className="brand-subtitle">Builders & Developers</span>
+            </div>
+          </Link>
         </div>
-      )}
+
+        <div className="nav-links desktop-only">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+            >
+              {item.label}
+              <span className="nav-link-underline"></span>
+            </Link>
+          ))}
+          <div className="nav-cta">
+            <Link to="/contact" className="cta-button">
+              Get Quote
+            </Link>
+          </div>
+        </div>
+
+        <button 
+          className="hamburger mobile-only" 
+          onClick={handleMenuToggle} 
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        >
+          <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
+          <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
+          <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
+        </button>
+
+        <div className={`mobile-menu ${menuOpen ? 'mobile-menu-open' : ''}`}>
+          <div className="mobile-menu-content">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`mobile-nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                onClick={handleLinkClick}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Link to="/contact" className="mobile-cta-button" onClick={handleLinkClick}>
+              Get Quote
+            </Link>
+          </div>
+        </div>
+      </div>
     </nav>
   );
 };
