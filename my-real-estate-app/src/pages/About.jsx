@@ -190,9 +190,9 @@ const About = () => {
                   <span>Image unavailable</span>
                 </div>
               ) : (
-                <img 
-                  src="/images/Founder.jpg" 
-                  alt="Badal Mahendrakumar Matey - Founder" 
+                <img
+                  src="https://via.placeholder.com/400x500/2563eb/ffffff?text=Founder"
+                  alt="Badal Mahendrakumar Matey - Founder"
                   loading="lazy"
                   onLoad={() => setFounderImageLoaded(true)}
                   onError={() => setFounderImageError(true)}
