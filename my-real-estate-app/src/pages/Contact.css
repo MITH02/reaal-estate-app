@@ -106,11 +106,12 @@
 .contact-form-container {
   background: var(--bg-card);
   border-radius: var(--radius-2xl);
-  padding: var(--space-8);
+  padding: var(--space-6);
   box-shadow: var(--shadow-xl);
   border: 1px solid var(--border-primary);
-  position: sticky;
-  top: var(--space-8);
+  height: fit-content;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
 }
 
 .contact-form-wrapper {
