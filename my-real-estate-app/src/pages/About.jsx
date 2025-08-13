@@ -1,4 +1,5 @@
 import React, { memo, useState, useEffect, useRef } from 'react';
+import './About.css';
 
 // Memoize the building image component to prevent unnecessary re-renders
 const BuildingImage = memo(({ image, index, scrollY, prevScrollY }) => {
