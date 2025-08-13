@@ -84,10 +84,17 @@
   height: 45px;
   width: auto;
   transition: all var(--transition-base);
+  filter: drop-shadow(0 2px 8px rgba(37, 99, 235, 0.2));
+  border-radius: var(--radius-md);
 }
 
 .navbar-scrolled .logo {
   height: 40px;
+}
+
+.brand-link:hover .logo {
+  filter: drop-shadow(0 4px 12px rgba(37, 99, 235, 0.3));
+  transform: scale(1.05);
 }
 
 .brand-text {
