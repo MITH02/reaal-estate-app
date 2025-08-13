@@ -380,23 +380,38 @@
 @media (max-width: 480px) {
   .contact-form-container {
     padding: var(--space-4);
+    margin: var(--space-2) 0;
   }
-  
+
   .form-header h2 {
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
   }
-  
+
   .submit-button {
     font-size: var(--text-base);
     padding: var(--space-3) var(--space-6);
   }
-  
+
   .office-info {
-    padding: var(--space-6);
+    padding: var(--space-4);
   }
-  
+
   .stat-badge {
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-sm);
+  }
+
+  .hero-section {
+    min-height: 40vh !important;
+    padding: var(--space-6) 0 !important;
+  }
+
+  .hero-title {
+    font-size: var(--text-2xl) !important;
+  }
+
+  .section {
+    padding: var(--space-8) 0 !important;
   }
 }
 
