@@ -1,63 +1,114 @@
-/* Comprehensive Responsive Design Optimizations */
+/* Comprehensive Responsive Design for All Mobile Devices */
+/* Optimized for iPhone, Samsung, Realme, Redmi, Poco, Oppo, Vivo, and all Android devices */
+
+/* Device-Specific Breakpoints */
+:root {
+  /* Enhanced spacing for mobile devices */
+  --mobile-space-xs: 0.125rem;  /* 2px */
+  --mobile-space-sm: 0.25rem;   /* 4px */
+  --mobile-space-md: 0.5rem;    /* 8px */
+  --mobile-space-lg: 0.75rem;   /* 12px */
+  --mobile-space-xl: 1rem;      /* 16px */
+  --mobile-space-2xl: 1.5rem;   /* 24px */
+  --mobile-space-3xl: 2rem;     /* 32px */
+
+  /* Enhanced touch targets */
+  --touch-target-min: 48px;
+  --touch-target-recommended: 56px;
+
+  /* Mobile-optimized border radius */
+  --mobile-radius: 0.5rem;
+  --mobile-radius-lg: 0.75rem;
+}
+
+/* Base responsive foundation */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+/* Ensure all interactive elements are touch-friendly */
+a, button, input, select, textarea, .btn, .nav-link, .project-card {
+  min-height: var(--touch-target-min);
+  min-width: var(--touch-target-min);
+}
 
 /* Mobile-First Media Queries */
 
-/* Extra Large Devices (1400px and up) */
+/* Extra Large Desktop (1400px and up) */
 @media (min-width: 1400px) {
   .container {
     max-width: 1320px;
   }
-  
+
   .hero-title {
     font-size: clamp(var(--text-5xl), 6vw, var(--text-6xl));
   }
-  
+
   .section {
     padding: var(--space-24) 0;
   }
+
+  .grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
-/* Large Devices (1200px and up) */
+/* Large Desktop (1200px to 1399px) */
 @media (min-width: 1200px) and (max-width: 1399px) {
   .container {
     max-width: 1140px;
   }
-  
+
   .grid-4 {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   .grid-3 {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .navbar-container {
+    padding: 0 var(--space-6);
+  }
 }
 
-/* Medium Devices (992px and up) */
+/* Desktop/Laptop (992px to 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
   .container {
     max-width: 960px;
     padding: 0 var(--space-4);
   }
-  
+
   .grid-4 {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .navbar-container {
     padding: 0 var(--space-5);
   }
-  
+
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-6);
   }
+
+  .hero-title {
+    font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+  }
 }
 
-/* Small Tablets (768px and up) */
+/* Tablets & Large Phones Landscape (768px to 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .container {
     max-width: 720px;
@@ -128,7 +179,7 @@
   }
 }
 
-/* Mobile Devices (480px to 767px) */
+/* Large Mobile Phones (480px to 767px) - iPhone 6 Plus, Samsung Galaxy, Realme, Redmi, Poco, Oppo, Vivo */
 @media (min-width: 480px) and (max-width: 767px) {
   .container {
     max-width: 100%;
@@ -317,7 +368,7 @@
   }
 }
 
-/* Extra Small Devices (up to 479px) */
+/* Small Mobile Phones (up to 479px) - iPhone SE, smaller Android devices */
 @media (max-width: 479px) {
   .container {
     padding: 0 var(--space-3);
@@ -498,7 +549,7 @@
   }
 }
 
-/* Landscape orientation on mobile */
+/* Mobile Landscape Mode - All devices */
 @media (max-height: 500px) and (orientation: landscape) {
   .video-section {
     height: 100vh;
@@ -524,7 +575,7 @@
   }
 }
 
-/* Touch-friendly adjustments */
+/* Touch Device Optimizations - All mobile devices */
 @media (pointer: coarse) {
   .nav-link,
   .filter-button,
@@ -553,7 +604,7 @@
   }
 }
 
-/* Improved text readability on small screens */
+/* Enhanced Mobile Typography & Readability */
 @media (max-width: 767px) {
   body {
     font-size: 16px;
