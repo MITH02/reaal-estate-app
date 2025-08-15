@@ -116,7 +116,7 @@ const Projects = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'var(--text-inverse)',
+        color: '#ffffff',
         textAlign: 'center'
       }}>
         <div className="container">
