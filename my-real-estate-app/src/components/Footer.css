@@ -175,31 +175,58 @@
 .social-link {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-3);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-lg);
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
   color: var(--text-inverse);
   text-decoration: none;
   transition: all var(--transition-base);
   backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.social-link:hover::before {
+  left: 100%;
 }
 
 .social-link:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--social-color, rgba(255, 255, 255, 0.15));
   transform: translateY(-2px);
-  border-color: var(--color-primary);
+  border-color: var(--social-color, var(--color-primary));
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .social-icon {
-  font-size: var(--text-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--social-color, var(--color-primary));
+  border-radius: var(--radius-lg);
   flex-shrink: 0;
+  color: white;
+  font-size: var(--text-base);
 }
 
 .social-name {
   font-size: var(--text-sm);
   font-weight: 500;
+  color: var(--text-inverse);
 }
 
 /* Footer Titles */
