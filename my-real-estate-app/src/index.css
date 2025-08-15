@@ -442,6 +442,36 @@ a:hover {
   100% { background-position: -200% 0; }
 }
 
+/* Theme-aware text colors for better visibility */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="light"], :root {
+  color-scheme: light;
+}
+
+/* Ensure hero sections always use white text */
+.hero-section,
+.hero-section *,
+.video-overlay-content,
+.video-overlay-content * {
+  color: #ffffff !important;
+}
+
+/* Ensure proper contrast for card text */
+[data-theme="dark"] .card,
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .contact-info-card {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .card *,
+[data-theme="dark"] .project-card *,
+[data-theme="dark"] .contact-info-card * {
+  color: inherit;
+}
+
 /* Focus States */
 *:focus {
   outline: 2px solid var(--color-primary);
