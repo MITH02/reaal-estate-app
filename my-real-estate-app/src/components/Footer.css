@@ -466,7 +466,13 @@
   }
   
   .social-links {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .social-link {
+    justify-content: center;
+    text-align: center;
   }
   
   .footer-bottom-content {
