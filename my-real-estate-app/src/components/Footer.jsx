@@ -19,27 +19,31 @@ const Footer = () => {
   const socialLinks = [
     {
       platform: 'Instagram',
-      icon: '📷',
+      icon: 'fab fa-instagram',
       url: 'https://www.instagram.com/agastyabuildersanddevelopers',
-      handle: '@agastyabuildersanddevelopers'
+      handle: '@agastyabuildersanddevelopers',
+      color: '#E4405F'
     },
     {
       platform: 'LinkedIn',
-      icon: '💼',
+      icon: 'fab fa-linkedin-in',
       url: 'https://www.linkedin.com/company/agastyabuildersanddevelopers',
-      handle: 'Agastya Builders'
+      handle: 'Agastya Builders',
+      color: '#0077B5'
     },
     {
       platform: 'Facebook',
-      icon: '👍',
+      icon: 'fab fa-facebook-f',
       url: 'https://www.facebook.com/agastyabuildersanddevelopers',
-      handle: 'Agastya Builders'
+      handle: 'Agastya Builders',
+      color: '#1877F2'
     },
     {
       platform: 'YouTube',
-      icon: '📺',
+      icon: 'fab fa-youtube',
       url: 'https://www.youtube.com/@agastyabuildersanddevelopers',
-      handle: 'Agastya Builders'
+      handle: 'Agastya Builders',
+      color: '#FF0000'
     }
   ];
 
