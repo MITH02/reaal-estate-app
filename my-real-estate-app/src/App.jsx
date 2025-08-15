@@ -18,7 +18,7 @@ import "./App.css";
 import "./styles/MobileOptimizations.css";
 import "./styles/ProjectImageOptimizations.css";
 import "./styles/WhatsAppButton.css";
-import { ThemeProvider, useTheme } from './context/ThemeContext';
+import { ThemeProvider } from './context/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
