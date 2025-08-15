@@ -213,6 +213,23 @@
   color: var(--text-secondary);
 }
 
+/* Additional text contrast improvements */
+[data-theme="dark"] .intro-section h2 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .intro-section p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .upcoming-project-section h2 {
+  color: var(--color-primary);
+}
+
+[data-theme="dark"] .upcoming-project-section h3 {
+  color: var(--text-secondary);
+}
+
 /* Stats Section */
 .stats-section {
   background: var(--bg-secondary);
