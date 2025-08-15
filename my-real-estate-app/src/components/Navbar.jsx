@@ -19,8 +19,43 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleMenuToggle = () => setMenuOpen((open) => !open);
-  const handleLinkClick = () => setMenuOpen(false);
+  const handleMenuToggle = () => {
+    setMenuOpen((open) => !open);
+
+    // Add haptic feedback for mobile devices
+    if ('vibrate' in navigator) {
+      navigator.vibrate(30);
+    }
+
+    // Prevent body scroll when menu is open
+    if (!menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  };
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+    document.body.style.overflow = '';
+  };
+
+  // Close menu on escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && menuOpen) {
+        handleLinkClick();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [menuOpen]);
+
+  // Close menu when location changes
+  useEffect(() => {
+    handleLinkClick();
+  }, [location]);
 
   const logoSrc = "/images/logo.png";
   const logoAlt = "Agastya Builders Logo";
