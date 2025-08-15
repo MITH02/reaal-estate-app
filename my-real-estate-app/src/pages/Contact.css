@@ -157,6 +157,13 @@
   gap: var(--space-4);
 }
 
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
