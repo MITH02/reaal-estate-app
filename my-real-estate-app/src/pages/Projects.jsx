@@ -42,7 +42,7 @@ const projects = [
     id: 4,
     name: "Vishal Pinnacle",
     description: "Luxury residential tower with panoramic views and premium amenities",
-    image: "/images/buildings/building3.jpg",
+    image: "/images/VishalPinnacleImage1.jpg",
     slug: "vishal-pinnacle",
     status: "Completed",
     type: "Residential",
