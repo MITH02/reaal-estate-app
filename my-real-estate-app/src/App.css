@@ -204,6 +204,15 @@
   line-height: 1.7;
 }
 
+/* Ensure proper contrast in dark theme */
+[data-theme="dark"] .section-title {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .section-subtitle {
+  color: var(--text-secondary);
+}
+
 /* Stats Section */
 .stats-section {
   background: var(--bg-secondary);
