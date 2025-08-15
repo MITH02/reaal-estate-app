@@ -223,7 +223,7 @@ const Contact = () => {
       {/* Contact Information & Form Section */}
       <section className="section">
         <div className="container">
-          <div className="grid grid-2 gap-8 items-start">
+          <div className="contact-main-grid">
             {/* Contact Information */}
             <div>
               <div className="section-header" style={{ textAlign: 'left', marginBottom: 'var(--space-8)' }}>
