@@ -13,6 +13,7 @@ import VishalEnrichProject from "./pages/VishalEnrichProject";
 import VishalClassicProject from "./pages/VishalClassicProject";
 import VishalPinnacleProject from "./pages/VishalPinnacleProject";
 import VishalEleganceProject from "./pages/VishalEleganceProject";
+import FooterTest from "./pages/FooterTest";
 import "./App.css";
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
