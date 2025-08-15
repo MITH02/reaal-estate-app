@@ -120,7 +120,6 @@ function WhatsAppBlinkButton() {
 }
 
 function AppContent() {
-  const { isDarkTheme } = useTheme();
 
   return (
     <div className="app">
