@@ -182,7 +182,7 @@ const Contact = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'var(--text-inverse)',
+        color: '#ffffff',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
