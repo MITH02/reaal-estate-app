@@ -93,6 +93,11 @@ const Navbar = () => {
               <span className="nav-link-underline"></span>
             </Link>
           ))}
+          <div className="nav-cta">
+            <Link to="/contact" className="cta-button">
+              Get Quote
+            </Link>
+          </div>
         </div>
 
         <button 
