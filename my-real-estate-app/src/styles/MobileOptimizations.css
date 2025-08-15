@@ -1,0 +1,371 @@
+/* Mobile Touch Optimizations & Performance Enhancements */
+
+/* Touch-friendly interactions for all mobile devices */
+* {
+  -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+  tap-highlight-color: rgba(37, 99, 235, 0.2);
+}
+
+/* Improved touch targets */
+.btn, .nav-link, .project-card, .filter-button, .theme-toggle, .whatsapp-button,
+.sound-toggle, .social-link, .footer-link, .hero-btn, .cta-button {
+  min-height: 48px;
+  min-width: 48px;
+  position: relative;
+}
+
+/* Enhanced button touch areas */
+.btn::after, .hero-btn::after, .cta-button::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  z-index: -1;
+}
+
+/* Prevent text selection on UI elements */
+.navbar, .hero-btn, .btn, .filter-button, .project-card-button,
+.theme-toggle, .whatsapp-button, .sound-toggle {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Smooth scrolling for mobile */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile-optimized scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.3);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 99, 235, 0.5);
+}
+
+/* Mobile Typography Optimizations */
+@media (max-width: 767px) {
+  /* Improve text rendering on mobile */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  
+  /* Better line heights for readability */
+  p, li, .project-card-description, .section-subtitle {
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+  }
+  
+  /* Prevent text overflow */
+  h1, h2, h3, h4, h5, h6, p, .project-card-title, .section-title {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
+/* Mobile Navigation Enhancements */
+@media (max-width: 768px) {
+  .navbar {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  
+  .mobile-menu {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .hamburger {
+    padding: 12px;
+    cursor: pointer;
+  }
+  
+  .mobile-nav-link {
+    padding: 16px 24px;
+    margin: 8px 0;
+    border-radius: var(--radius-lg);
+  }
+}
+
+/* Project Card Mobile Optimizations */
+@media (max-width: 767px) {
+  .project-card {
+    margin-bottom: var(--space-6);
+    border-radius: var(--mobile-radius-lg);
+  }
+  
+  .project-card-image-container {
+    border-radius: var(--mobile-radius-lg) var(--mobile-radius-lg) 0 0;
+  }
+  
+  .project-card-content {
+    padding: var(--space-4);
+  }
+  
+  .project-card-button {
+    margin-top: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--mobile-radius);
+  }
+}
+
+/* Form Optimizations for Mobile */
+@media (max-width: 767px) {
+  input, textarea, select {
+    min-height: 48px;
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--mobile-radius);
+    font-size: 16px; /* Prevents zoom on iOS */
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .form-row {
+    gap: var(--space-4);
+  }
+  
+  .submit-button {
+    min-height: 56px;
+    font-size: var(--text-lg);
+    font-weight: 600;
+  }
+}
+
+/* Mobile Video Optimizations */
+@media (max-width: 767px) {
+  .video-section {
+    height: 100vh;
+    height: 100dvh; /* Dynamic viewport height for mobile browsers */
+  }
+  
+  .hero-video, .hero-video-fallback {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .video-overlay-content {
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .sound-toggle {
+    touch-action: manipulation;
+  }
+}
+
+/* iOS Safari Specific Fixes */
+@supports (-webkit-appearance: none) {
+  @media (max-width: 767px) {
+    .navbar {
+      /* Fix for iOS Safari navbar transparency issues */
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+    }
+    
+    /* Fix for iOS Safari 100vh issue */
+    .video-section, .hero-section {
+      height: 100vh;
+      height: -webkit-fill-available;
+    }
+    
+    /* Improve touch responsiveness */
+    button, .btn, .hero-btn {
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+}
+
+/* Android Browser Specific Optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 1) and (max-width: 767px) {
+  /* Fix for older Android browsers */
+  .container {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .project-card {
+    transform: translateZ(0);
+  }
+}
+
+/* Performance Optimizations for Low-End Devices */
+@media (max-width: 480px) {
+  /* Reduce animations for better performance */
+  .project-card:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Simplify shadows for better performance */
+  .card, .project-card, .navbar {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .card:hover, .project-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+  
+  /* Optimize images */
+  .project-card-image, .hero-video {
+    image-rendering: auto;
+    will-change: auto;
+  }
+}
+
+/* Landscape Mode Optimizations */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .navbar {
+    height: 60px;
+  }
+  
+  .main-content {
+    margin-top: 60px;
+  }
+  
+  .video-overlay-content h1 {
+    font-size: clamp(var(--text-lg), 4vw, var(--text-xl));
+  }
+  
+  .overlay-buttons {
+    flex-direction: row;
+    gap: var(--space-4);
+  }
+  
+  .section {
+    padding: var(--space-8) 0;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .btn, .hero-btn, .project-card, .navbar {
+    border: 2px solid currentColor;
+  }
+  
+  .project-card-image {
+    filter: contrast(1.2);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .project-card:hover, .btn:hover {
+    transform: none;
+  }
+}
+
+/* Dark Mode Mobile Adjustments */
+@media (prefers-color-scheme: dark) and (max-width: 767px) {
+  [data-theme="dark"] {
+    color-scheme: dark;
+  }
+  
+  [data-theme="dark"] .navbar {
+    background: rgba(15, 23, 42, 0.95);
+  }
+  
+  [data-theme="dark"] .project-card {
+    background: var(--bg-secondary);
+    border-color: var(--border-secondary);
+  }
+}
+
+/* Safe Area Insets for devices with notches */
+@media (max-width: 767px) {
+  .navbar {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .main-content {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  .whatsapp-button {
+    bottom: calc(var(--space-4) + env(safe-area-inset-bottom));
+    right: calc(var(--space-4) + env(safe-area-inset-right));
+  }
+  
+  .theme-toggle {
+    left: calc(var(--space-4) + env(safe-area-inset-left));
+  }
+}
+
+/* Focus Improvements for Mobile */
+@media (max-width: 767px) {
+  *:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
+  button:focus, .btn:focus, .hero-btn:focus {
+    outline-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Loading State Optimizations */
+.skeleton-mobile {
+  background: linear-gradient(90deg, 
+    var(--bg-secondary) 25%, 
+    var(--bg-tertiary) 50%, 
+    var(--bg-secondary) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Internet Connection Awareness */
+@media (max-width: 767px) {
+  /* Optimize for slow connections */
+  .hero-video {
+    preload: metadata;
+  }
+  
+  .project-card-image {
+    loading: lazy;
+  }
+}
