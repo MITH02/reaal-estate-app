@@ -398,6 +398,10 @@
 }
 
 @media (max-width: 480px) {
+  .contact-main-grid {
+    gap: var(--space-4);
+  }
+
   .contact-form-container {
     padding: var(--space-4);
     margin: var(--space-2) 0;
@@ -432,6 +436,10 @@
 
   .section {
     padding: var(--space-8) 0 !important;
+  }
+
+  .container {
+    padding: 0 var(--space-3);
   }
 }
 
