@@ -374,9 +374,7 @@
 
 /* Focus states */
 .nav-link:focus,
-.cta-button:focus,
-.mobile-nav-link:focus,
-.mobile-cta-button:focus {
+.mobile-nav-link:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
