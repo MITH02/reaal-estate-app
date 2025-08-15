@@ -26,6 +26,7 @@
   aspect-ratio: 16/10;
   overflow: hidden;
   background: var(--bg-tertiary);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 
 .project-card-image {
