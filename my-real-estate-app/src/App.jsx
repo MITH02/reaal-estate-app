@@ -99,6 +99,7 @@ function AppContent() {
             <Route path="/projects/vishal-classic" element={<VishalClassicProject />} />
             <Route path="/projects/vishal-pinnacle" element={<VishalPinnacleProject />} />
             <Route path="/projects/vishal-elegance" element={<VishalEleganceProject />} />
+            <Route path="/footer-test" element={<FooterTest />} />
             <Route path="*" element={<div>Page not found. Go to <Link to="/">Home</Link></div>} />
           </Routes>
         </main>
