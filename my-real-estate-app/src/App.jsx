@@ -72,14 +72,28 @@ function WhatsAppBlinkButton() {
           background: '#fff',
           color: '#222',
           borderRadius: '12px',
-          padding: '8px 12px',
+          padding: '10px 16px',
           boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
           fontSize: '14px',
           whiteSpace: 'nowrap',
           border: '1px solid #e0e0e0',
-          animation: 'pulse 2s infinite'
+          animation: 'pulse 2s infinite',
+          position: 'relative'
         }}>
-          💬 Chat with us!
+          <span style={{ fontSize: '16px', marginRight: '6px' }}>👋</span>
+          Hi! We are here to help
+          {/* Message arrow */}
+          <div style={{
+            position: 'absolute',
+            right: '-8px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            width: '0',
+            height: '0',
+            borderLeft: '8px solid #fff',
+            borderTop: '6px solid transparent',
+            borderBottom: '6px solid transparent'
+          }}></div>
         </div>
 
         {/* WhatsApp button */}
