@@ -18,7 +18,7 @@ const projects = [
     id: 2,
     name: "Vishal Enrich",
     description: "Premium residential complex with modern architecture and luxury finishes",
-    image: "/images/buildings/building1.jpg.jpg",
+    image: "/images/buildings/building1.jpg",
     slug: "vishal-enrich",
     status: "Completed",
     type: "Residential",
