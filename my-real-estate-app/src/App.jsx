@@ -13,6 +13,7 @@ import VishalEnrichProject from "./pages/VishalEnrichProject";
 import VishalClassicProject from "./pages/VishalClassicProject";
 import VishalPinnacleProject from "./pages/VishalPinnacleProject";
 import VishalEleganceProject from "./pages/VishalEleganceProject";
+import FooterTest from "./pages/FooterTest";
 import "./App.css";
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
@@ -98,6 +99,7 @@ function AppContent() {
             <Route path="/projects/vishal-classic" element={<VishalClassicProject />} />
             <Route path="/projects/vishal-pinnacle" element={<VishalPinnacleProject />} />
             <Route path="/projects/vishal-elegance" element={<VishalEleganceProject />} />
+            <Route path="/footer-test" element={<FooterTest />} />
             <Route path="*" element={<div>Page not found. Go to <Link to="/">Home</Link></div>} />
           </Routes>
         </main>

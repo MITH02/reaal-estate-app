@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/Home.css';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -60,7 +59,7 @@ const Home = () => {
   }, [statsVisible]);
 
   const handleVideoError = () => {
-    console.error('Error loading video');
+    console.error('Error loading video: VideoPintrestt.mp4 may be corrupted or missing');
     setVideoError(true);
   };
 
@@ -87,129 +86,275 @@ const Home = () => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  const features = [
+    {
+      icon: '🏗️',
+      title: 'Expert Construction',
+      description: 'Over 30 years of construction excellence with premium quality materials and craftsmanship.'
+    },
+    {
+      icon: '🎨',
+      title: 'Modern Design',
+      description: 'Contemporary architectural designs that blend luxury with functionality and sustainability.'
+    },
+    {
+      icon: '⚡',
+      title: 'Fast Delivery',
+      description: 'Timely project completion with efficient construction processes and project management.'
+    },
+    {
+      icon: '💎',
+      title: 'Premium Quality',
+      description: 'Top-tier materials and finishes ensuring long-lasting durability and aesthetic appeal.'
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: 'Rajesh Kumar',
+      role: 'Homeowner',
+      content: 'Exceptional quality and timely delivery. Our dream home became reality with Agastya Builders.',
+      rating: 5
+    },
+    {
+      name: 'Priya Sharma',
+      role: 'Property Investor',
+      content: 'Professional service and attention to detail. Highly recommend for premium construction projects.',
+      rating: 5
+    },
+    {
+      name: 'Amit Patel',
+      role: 'Business Owner',
+      content: 'Outstanding craftsmanship and modern designs. Best builders in the region.',
+      rating: 5
+    }
+  ];
+
   return (
     <>
-      {/* Video Section - now outside main-content for true full-bleed */}
+      {/* Hero Video Section */}
       <section className="video-section">
-        <video
-          ref={videoRef}
-          className="hero-video"
-          src="/images/VideoPintrestt.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          style={{
-            width: '100vw',
-            height: '100vh',
-            objectFit: 'cover',
-            background: 'black'
-          }}
-          onError={handleVideoError}
-        />
-        {/* Sound Toggle Button */}
-        <button
-          className="sound-toggle"
-          onClick={handleSoundToggle}
-          aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-        >
-          {isMuted ? (
-            <span role="img" aria-label="muted">🔇</span>
-          ) : (
-            <span role="img" aria-label="sound">🔊</span>
-          )}
-        </button>
+        {!videoError ? (
+          <video
+            ref={videoRef}
+            className="hero-video"
+            src="https://cdn.builder.io/o/assets%2Fb706ac4975b94791890c8d3621c65cb4%2F15783be6f38f40f5a52e6f637da988b0?alt=media&token=5225cadd-d662-4e7f-b63d-73a33c8b5069&apiKey=b706ac4975b94791890c8d3621c65cb4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            onError={handleVideoError}
+          />
+        ) : (
+          <div
+            className="hero-video-fallback"
+            style={{
+              background: `linear-gradient(
+                135deg,
+                rgba(37, 99, 235, 0.8) 0%,
+                rgba(15, 23, 42, 0.9) 50%,
+                rgba(51, 65, 85, 0.8) 100%
+              ), url('/images/VishalSpandanImage1.JPG') center/cover`
+            }}
+          />
+        )}
+        
+        {/* Sound Toggle Button - only show when video is working */}
+        {!videoError && (
+          <button
+            className="sound-toggle"
+            onClick={handleSoundToggle}
+            aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+          >
+            {isMuted ? (
+              <span role="img" aria-label="muted">🔇</span>
+            ) : (
+              <span role="img" aria-label="sound">🔊</span>
+            )}
+          </button>
+        )}
+        
         {/* Overlay Content */}
         <div className="video-overlay-content">
-          <h1>LUXURY &nbsp; QUALITY &nbsp; ELEGANCE</h1>
+          <h1 className="animate-fade-in">LUXURY • QUALITY • ELEGANCE</h1>
           <div className="overlay-buttons">
-            <button className="hero-btn" onClick={() => navigate('/projects')}>OUR PROJECTS</button>
-            <button className="hero-btn" onClick={() => navigate('/contact')}>CONTACT US</button>
+            <button className="hero-btn animate-slide-in-left" onClick={() => navigate('/projects')}>
+              OUR PROJECTS
+            </button>
+            <button className="hero-btn animate-slide-in-right" onClick={() => navigate('/contact')}>
+              CONTACT US
+            </button>
           </div>
         </div>
       </section>
 
       <div className="main-content home-page">
-        {/* Hero/Intro Section */}
-        <section className="intro-section" style={{ padding: '4rem 2rem', textAlign: 'center', background: 'var(--background-color)' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '1.5rem', color: 'var(--accent-color)' }}>
-            Homes crafted with luxury, defined by quality, and embraced in simplicity.
-          </h2>
-          <p style={{ fontSize: '1.25rem', maxWidth: 800, margin: '0 auto 2.5rem', color: 'var(--text-color)' }}>
-            For over 30 plus years, we've mastered the art of crafting impeccable lifestyle standards that are both luxurious and sustainable. Experience the future of Agastya Builders and Developers, where timeless elegance and modern sustainability converge to create a truly unparalleled living experience.
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <button className="about-button" onClick={handleAboutClick}>
-              About Us
-            </button>
+        {/* Introduction Section */}
+        <section className="intro-section section">
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Crafting Dreams Into Reality</h2>
+              <p className="section-subtitle">
+                For over 30 years, we've mastered the art of creating impeccable lifestyle standards that combine luxury with sustainability. Experience the future of premium living with Agastya Builders and Developers.
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <button className="about-button" onClick={handleAboutClick}>
+                Discover Our Story
+              </button>
+            </div>
           </div>
         </section>
 
-        {/* Statistics Section with Animation */}
+        {/* Features Section */}
+        <section className="section" style={{ background: 'var(--bg-secondary)' }}>
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">Why Choose Agastya</h2>
+              <p className="section-subtitle">
+                Discover what makes us the preferred choice for luxury construction and development
+              </p>
+            </div>
+            <div className="grid grid-4 gap-8">
+              {features.map((feature, index) => (
+                <div key={index} className="card text-center">
+                  <div style={{ fontSize: 'var(--text-5xl)', marginBottom: 'var(--space-4)' }}>
+                    {feature.icon}
+                  </div>
+                  <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: '600', marginBottom: 'var(--space-3)', color: 'var(--text-primary)' }}>
+                    {feature.title}
+                  </h3>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-base)', lineHeight: '1.6', margin: '0' }}>
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Statistics Section */}
         <section className={`stats-section ${statsVisible ? 'visible' : ''}`}>
-          <div className="stats-container">
-            <div className="stat-item">
-              <div className="stat-number" data-value="30" id="years">0</div>
-              <p>Years of Experience</p>
+          <div className="container">
+            <div className="section-header" style={{ marginBottom: 'var(--space-12)' }}>
+              <h2 className="section-title" style={{ color: 'var(--text-primary)' }}>Our Achievements</h2>
+              <p className="section-subtitle">Numbers that reflect our commitment to excellence</p>
             </div>
-            <div className="stat-item">
-              <div className="stat-number" data-value="35" id="projects">0</div>
-              <p>Projects Completed</p>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number" data-value="98" id="customers">0</div>
-              <p>Happy Customers Rate</p>
+            <div className="stats-container">
+              <div className="stat-item">
+                <div className="stat-number" id="years">0</div>
+                <p>Years of Excellence</p>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number" id="projects">0</div>
+                <p>Projects Delivered</p>
+              </div>
+              <div className="stat-item">
+                <div className="stat-number" id="customers">0</div>
+                <p>Customer Satisfaction</p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/*Upcoming Project Section */}
-        <section className="upcoming-project-section" style={{ background: 'var(--background-color)', padding: '4rem 2rem', textAlign: 'center' }}>
-          <h3 style={{
-            fontSize: '2rem',
-            fontWeight: 600,
-            letterSpacing: '2px',
-            color: 'var(--accent-color)',
-            marginBottom: '1rem',
-            textTransform: 'uppercase',
-            opacity: 0.8
-          }}>
-            Upcoming Project
-          </h3>
-          <h2 style={{
-            fontSize: '2.8rem',
-            fontWeight: 800,
-            color: '#3498db',
-            marginBottom: '2rem',
-            letterSpacing: '3px',
-            textShadow: '0 2px 10px rgba(52,152,219,0.1)',
-            animation: 'glow 2s infinite alternate'
-          }}>
-            Vishal Spandan
-          </h2>
-          <p style={{ fontSize: '1.15rem', maxWidth: 700, margin: '0 auto 2.5rem', color: 'var(--text-color)' }}>
-          Discover Vishal Spandan – luxurious apartments where contemporary design meets exceptional living. Featuring striking architecture, elegant curving balconies, and over six world-class amenities, Vishal Spandan redefines modern living with elegance, comfort, and innovation.</p>
-          <div className="project-features" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2.5rem', margin: '2.5rem 0' }}>
-            <div>
-              <div style={{ fontWeight: 700, fontSize: '1.5rem', color: '#3498db' }}>3BHK</div>
-              <div>Luxurious Apartments</div>
+        {/* Upcoming Project Section */}
+        <section className="upcoming-project-section">
+          <div className="container">
+            <h3>Upcoming Project</h3>
+            <h2 className="animate-glow">Vishal Spandan</h2>
+            <p style={{ fontSize: 'var(--text-lg)', maxWidth: '800px', margin: '0 auto var(--space-8)', color: 'var(--text-secondary)', lineHeight: '1.7' }}>
+              Discover Vishal Spandan – luxurious apartments where contemporary design meets exceptional living. Featuring striking architecture, elegant curving balconies, and world-class amenities that redefine modern living with elegance, comfort, and innovation.
+            </p>
+            
+            <div className="project-features">
+              <div>
+                <div>3BHK</div>
+                <div>Luxurious Apartments</div>
+              </div>
+              <div>
+                <div>6500</div>
+                <div>Sq. Ft. Plot Size</div>
+              </div>
+              <div>
+                <div>G+7</div>
+                <div>Floors Building</div>
+              </div>
+              <div>
+                <div>7+</div>
+                <div>World Class Amenities</div>
+              </div>
             </div>
-            <div>
-              <div style={{ fontWeight: 700, fontSize: '1.5rem', color: '#3498db' }}>6500</div>
-              <div>Sq. Ft. Plot Size</div>
-            </div>
-            <div>
-              <div style={{ fontWeight: 700, fontSize: '1.5rem', color: '#3498db' }}>G+7</div>
-              <div>Floors Apartment</div>
-            </div>
-            <div>
-              <div style={{ fontWeight: 700, fontSize: '1.5rem', color: '#3498db' }}>7+</div>
-              <div>World Class Amenities</div>
+            
+            <div style={{ marginTop: 'var(--space-8)', display: 'flex', justifyContent: 'center', gap: 'var(--space-6)', flexWrap: 'wrap' }}>
+              <button className="btn btn-primary btn-lg" onClick={() => navigate('/contact')}>
+                Get In Touch
+              </button>
+              <button className="btn btn-secondary btn-lg" onClick={() => navigate('/projects/vishal-spandan')}>
+                Learn More
+              </button>
             </div>
           </div>
-          <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center', gap: '1.5rem' }}>
-            <button className="about-button" onClick={() => navigate('/contact')}>CONTACT US</button>
-            <button className="about-button" style={{ background: '#fff', color: 'var(--accent-color)', border: '2px solid var(--accent-color)' }} onClick={() => navigate('/projects/vishal-spandan')}>Learn More</button>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="section" style={{ background: 'var(--bg-secondary)' }}>
+          <div className="container">
+            <div className="section-header">
+              <h2 className="section-title">What Our Clients Say</h2>
+              <p className="section-subtitle">
+                Real stories from satisfied homeowners and investors
+              </p>
+            </div>
+            <div className="grid grid-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="card">
+                  <div style={{ marginBottom: 'var(--space-4)' }}>
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <span key={i} style={{ color: 'var(--color-accent)', fontSize: 'var(--text-xl)' }}>★</span>
+                    ))}
+                  </div>
+                  <p style={{ fontSize: 'var(--text-lg)', lineHeight: '1.6', marginBottom: 'var(--space-4)', color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+                    "{testimonial.content}"
+                  </p>
+                  <div>
+                    <h4 style={{ fontSize: 'var(--text-lg)', fontWeight: '600', margin: '0', color: 'var(--text-primary)' }}>
+                      {testimonial.name}
+                    </h4>
+                    <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-tertiary)', margin: '0' }}>
+                      {testimonial.role}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Call to Action Section */}
+        <section className="section" style={{ background: 'var(--color-primary)', color: 'var(--text-inverse)', textAlign: 'center' }}>
+          <div className="container">
+            <h2 style={{ fontSize: 'var(--text-4xl)', fontWeight: '700', marginBottom: 'var(--space-6)', color: 'var(--text-inverse)' }}>
+              Ready to Build Your Dream Home?
+            </h2>
+            <p style={{ fontSize: 'var(--text-xl)', marginBottom: 'var(--space-8)', opacity: '0.9', maxWidth: '600px', margin: '0 auto var(--space-8)' }}>
+              Let's discuss your vision and turn it into reality with our expert team and premium construction services.
+            </p>
+            <div className="flex justify-center gap-6">
+              <button 
+                className="btn btn-accent btn-lg"
+                onClick={() => navigate('/contact')}
+                style={{ background: 'var(--text-inverse)', color: 'var(--color-primary)' }}
+              >
+                Start Your Project
+              </button>
+              <button 
+                className="btn btn-secondary btn-lg"
+                onClick={() => navigate('/projects')}
+                style={{ borderColor: 'var(--text-inverse)', color: 'var(--text-inverse)' }}
+              >
+                View Portfolio
+              </button>
+            </div>
           </div>
         </section>
       </div>
