@@ -1,0 +1,125 @@
+/* WhatsApp Floating Button Styles */
+
+.whatsapp-floating-button {
+  pointer-events: none;
+}
+
+.whatsapp-floating-button > div {
+  pointer-events: auto;
+}
+
+.whatsapp-message {
+  opacity: 0;
+  animation: fadeInMessage 3s ease-in-out infinite;
+}
+
+.whatsapp-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1) !important;
+}
+
+.whatsapp-button:active {
+  transform: scale(0.95) !important;
+}
+
+/* Animations */
+@keyframes fadeInMessage {
+  0%, 70% { opacity: 0; transform: translateX(10px); }
+  10%, 60% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(10px); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .whatsapp-floating-button {
+    right: 16px !important;
+  }
+  
+  .whatsapp-message {
+    font-size: 12px;
+    padding: 6px 10px;
+    max-width: 120px;
+    text-align: center;
+  }
+  
+  .whatsapp-button {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatsapp-floating-button {
+    right: 12px !important;
+  }
+  
+  .whatsapp-message {
+    font-size: 11px;
+    padding: 5px 8px;
+    border-radius: 8px;
+  }
+  
+  .whatsapp-button {
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 22px !important;
+  }
+}
+
+/* Landscape mode adjustments */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .whatsapp-floating-button {
+    right: 12px !important;
+  }
+  
+  .whatsapp-button {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 20px !important;
+  }
+  
+  .whatsapp-message {
+    display: none; /* Hide message in landscape to save space */
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-message,
+  .whatsapp-button {
+    animation: none !important;
+  }
+  
+  .whatsapp-floating-button {
+    transition: none !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .whatsapp-message {
+    border: 2px solid #000;
+    background: #fff;
+    color: #000;
+  }
+  
+  .whatsapp-button {
+    border: 2px solid #25D366;
+  }
+}
