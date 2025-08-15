@@ -43,7 +43,15 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <div className="project-card" onClick={handleCardClick}>
+    <div
+      className="project-card"
+      onClick={handleCardClick}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      role="button"
+      tabIndex={0}
+      aria-label={`View details for ${project.name}`}
+    >
       {/* Image Container */}
       <div className="project-card-image-container">
         {!imageLoaded && !imageError && (
