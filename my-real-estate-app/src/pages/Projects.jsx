@@ -18,36 +18,33 @@ const projects = [
     id: 2,
     name: "Vishal Enrich",
     description: "Premium residential complex with modern architecture and luxury finishes",
-    image: "/images/VishalEnrichImage1.jpg",
+    image: "/images/buildings/building1.jpg",
     slug: "vishal-enrich",
     status: "Completed",
     type: "Residential",
     features: ["2&3BHK Apartments", "Premium Finishes", "Modern Design", "Security"],
-    location: "Central Area",
     price: "Starting ₹65L Onwards"
   },
   {
     id: 3,
     name: "Vishal Classic",
     description: "Elegant homes designed for comfortable and sophisticated living",
-    image: "/images/VishalClassicImage1.jpg",
+    image: "/images/buildings/building2.jpg",
     slug: "vishal-classic",
     status: "Completed",
     type: "Residential",
     features: ["2&3BHK Units", "Classic Design", "Quality Construction", "Garden Area"],
-    location: "Suburban Area",
     price: "Starting ₹90L Onwards"
   },
   {
     id: 4,
     name: "Vishal Pinnacle",
     description: "Luxury residential tower with panoramic views and premium amenities",
-    image: "/images/VishalPinnacleImage1.jpg",
+    image: "/images/buildings/building3.jpg"",
     slug: "vishal-pinnacle",
     status: "Completed",
     type: "Residential",
     features: ["Luxury Units", "Panoramic Views", "Premium Amenities", "Parking"],
-    location: "City Center",
     price: "Starting ₹95L"
   },
   {
@@ -59,8 +56,7 @@ const projects = [
     status: "Completed",
     type: "Residential",
     features: ["Elegant Design", "Modern Conveniences", "Quality Materials", "Vastu Compliant"],
-    location: "Peaceful Area",
-    price: "Starting ₹40L"
+    price: "Starting ₹95L"
   }
 ];
 
