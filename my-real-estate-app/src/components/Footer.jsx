@@ -137,8 +137,11 @@ const Footer = () => {
                     className="social-link"
                     aria-label={`Follow us on ${social.platform}`}
                     title={social.handle}
+                    style={{ '--social-color': social.color }}
                   >
-                    <span className="social-icon">{social.icon}</span>
+                    <span className="social-icon">
+                      <i className={social.icon}></i>
+                    </span>
                     <span className="social-name">{social.platform}</span>
                   </a>
                 ))}
