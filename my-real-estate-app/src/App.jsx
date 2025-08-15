@@ -89,10 +89,13 @@ function WhatsAppBlinkButton() {
           padding: '10px 16px',
           boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
           fontSize: '14px',
-          whiteSpace: 'nowrap',
+          whiteSpace: 'normal',
           border: '1px solid #e0e0e0',
           animation: 'pulse 2s infinite',
-          position: 'relative'
+          position: 'relative',
+          textAlign: 'center',
+          lineHeight: '1.4',
+          maxWidth: '180px'
         }}>
           Have questions?<br />We're available on WhatsApp!
           {/* Message arrow */}
