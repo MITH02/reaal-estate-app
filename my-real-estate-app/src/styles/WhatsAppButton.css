@@ -92,17 +92,18 @@
   .whatsapp-floating-button {
     right: 12px !important;
   }
-  
+
   .whatsapp-message {
-    font-size: 11px;
-    padding: 5px 8px;
+    font-size: 12px;
+    padding: 6px 10px;
     border-radius: 8px;
+    max-width: 140px;
   }
-  
+
   .whatsapp-button {
-    width: 48px !important;
-    height: 48px !important;
-    font-size: 22px !important;
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 24px !important;
   }
 }
 
