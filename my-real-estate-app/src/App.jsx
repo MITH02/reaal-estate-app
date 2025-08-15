@@ -60,13 +60,17 @@ function WhatsAppBlinkButton() {
 
   if (!isVisible) return null;
 
+  const isMobile = window.innerWidth <= 768;
+  const bottomOffset = isMobile ? 80 : 120;
+  const minTopOffset = isMobile ? 150 : 200;
+
   return (
     <div
       className="whatsapp-floating-button"
       style={{
         position: 'absolute',
-        right: '20px',
-        top: Math.max(scrollPosition + window.innerHeight - 100, scrollPosition + 200) + 'px',
+        right: isMobile ? '16px' : '24px',
+        top: Math.max(scrollPosition + window.innerHeight - bottomOffset, scrollPosition + minTopOffset) + 'px',
         zIndex: 9999,
         transition: 'top 0.3s ease-out'
       }}
