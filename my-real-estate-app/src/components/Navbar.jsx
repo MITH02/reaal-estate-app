@@ -122,6 +122,9 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
+            <Link to="/contact" className="mobile-cta-button" onClick={handleLinkClick}>
+              Get Quote
+            </Link>
           </div>
         </div>
       </div>
