@@ -12,6 +12,8 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--space-8);
   align-items: start;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Contact Information Cards */
