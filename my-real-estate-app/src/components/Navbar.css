@@ -115,13 +115,21 @@
   position: relative;
 }
 
+/* Fallback for better compatibility */
+@supports not (background-clip: text) {
+  .brand-name {
+    color: var(--color-primary);
+    background: none;
+  }
+}
+
 .brand-subtitle {
   font-size: var(--text-sm);
   font-weight: 600;
   color: var(--color-primary);
   letter-spacing: 1px;
   text-transform: uppercase;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /* Desktop Navigation */
