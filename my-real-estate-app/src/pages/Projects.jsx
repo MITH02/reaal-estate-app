@@ -30,7 +30,7 @@ const projects = [
     id: 3,
     name: "Vishal Classic",
     description: "Elegant homes designed for comfortable and sophisticated living",
-    image: "/images/buildings/building2.jpg",
+    image: "/images/VishalClassicImage1.jpg",
     slug: "vishal-classic",
     status: "Completed",
     type: "Residential",
