@@ -427,7 +427,9 @@
   .mobile-menu,
   .nav-link,
   .hamburger-line,
-  .mobile-nav-link {
+  .cta-button,
+  .mobile-nav-link,
+  .mobile-cta-button {
     transition: none;
   }
   
