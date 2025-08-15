@@ -409,12 +409,43 @@
 
   .project-card-image {
     object-fit: cover;
-    object-position: center top;
+    object-position: center center;
+    width: 100%;
+    height: 100%;
   }
 
   .stat-badge {
     padding: var(--space-3) var(--space-4);
   }
+}
+
+/* Large screens - better image display */
+@media (min-width: 1200px) {
+  .project-card-image-container {
+    aspect-ratio: 16/10;
+  }
+
+  .project-card-image {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* Ensure images load properly */
+.project-card-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.project-card-image.loading {
+  opacity: 0;
+  transform: scale(1.02);
+}
+
+.project-card-image.loaded {
+  opacity: 1;
+  transform: scale(1);
 }
 
 /* Performance optimizations */
