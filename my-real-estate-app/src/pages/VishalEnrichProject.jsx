@@ -94,8 +94,8 @@ const VishalEnrichProject = () => {
         <div style={{ marginBottom: 6 }}>Email : <a href="mailto:info@agastyabuildersanddevelopers.com" style={{ color: 'var(--link-color, #3498db)' }}>info@agastyabuildersanddevelopers.com</a></div>
         <div style={{ marginBottom: 6 }}>
           Phone : 
-          <a href="tel:+917559378178" style={{ color: '#3498db', marginRight: 8 }}>+91 7559378178</a>,
-          <a href="tel:+919822642423" style={{ color: '#3498db' }}>+91 9822642423</a>
+          <a href="tel:+919822642423" style={{ color: '#3498db', marginRight: 8 }}>+91 9822642423</a>,
+          <a href="tel:+917559378178" style={{ color: '#3498db' }}>+91 7559378178</a>
         </div>
         <div>Office Hours : 10:00 AM - 10:00 PM</div>
       </div>
@@ -194,4 +194,4 @@ const VishalEnrichProject = () => {
   );
 };
 
-export default VishalEnrichProject; 
+export default VishalEnrichProject;

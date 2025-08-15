@@ -137,8 +137,8 @@ const Contact = () => {
     {
       icon: '📞',
       title: 'Call Us',
-      primary: '+91 7559378178',
-      secondary: '+91 9822642423',
+      primary: '+91 9822642423',
+      secondary: '+91 7559378178',
       action: 'Call Now'
     },
     {

@@ -69,8 +69,8 @@ const Footer = () => {
 
   const contactInfo = {
     address: 'BPCL Petrol pump, Matey Chowak,\nMaharashtra 440010',
-    phone: '+91 7559378178',
-    phone2: '+91 9822642423',
+    phone: '+91 9822642423',
+    phone2: '+91 7559378178',
     email: 'info@agastyabuildersanddevelopers.com',
     hours: 'Mon - Sat: 10AM - 7PM'
   };

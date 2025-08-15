@@ -15,7 +15,10 @@ import VishalPinnacleProject from "./pages/VishalPinnacleProject";
 import VishalEleganceProject from "./pages/VishalEleganceProject";
 import FooterTest from "./pages/FooterTest";
 import "./App.css";
-import { ThemeProvider, useTheme } from './context/ThemeContext';
+import "./styles/MobileOptimizations.css";
+import "./styles/ProjectImageOptimizations.css";
+import "./styles/WhatsAppButton.css";
+import { ThemeProvider } from './context/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -23,60 +26,130 @@ import ScrollToTop from "./ScrollToTop";
 import './Responsive.css';
 
 function WhatsAppBlinkButton() {
-  // Always show the popup
-  const showMsg = true;
+  const [isVisible, setIsVisible] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
+
+      // Show button after scrolling 50px on mobile, 100px on desktop
+      const isMobile = window.innerWidth <= 768;
+      const threshold = isMobile ? 50 : 100;
+      setIsVisible(position > threshold);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll); // Also check on resize
+
+    // Initial check
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
 
   const handleClick = () => {
     const message = "Hi! I am interested in properties at Agastya Developers and Builders";
     const whatsappUrl = `https://wa.me/917559378178?text=${encodeURIComponent(message)}`;
-	window.location.href = whatsappUrl;
+    window.location.href = whatsappUrl;
   };
 
+  if (!isVisible) return null;
+
+  const isMobile = window.innerWidth <= 768;
+  const bottomOffset = isMobile ? 80 : 120;
+  const minTopOffset = isMobile ? 150 : 200;
+
   return (
-    <div style={{ position: 'fixed', bottom: 24, right: 24, zIndex: 9999 }}>
-      {showMsg && (
-        <div style={{
-          position: 'absolute',
-          bottom: 60,
-          right: 0,
+    <div
+      className="whatsapp-floating-button"
+      style={{
+        position: 'absolute',
+        right: isMobile ? '16px' : '24px',
+        top: Math.max(scrollPosition + window.innerHeight - bottomOffset, scrollPosition + minTopOffset) + 'px',
+        zIndex: 9999,
+        transition: 'top 0.3s ease-out'
+      }}
+    >
+      <div style={{
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '12px'
+      }}>
+        {/* Message popup */}
+        <div className="whatsapp-message" style={{
           background: '#fff',
           color: '#222',
-          borderRadius: 8,
-          padding: '8px 16px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-          fontSize: 14,
-          whiteSpace: 'nowrap'
+          borderRadius: '12px',
+          padding: '10px 16px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+          fontSize: '14px',
+          whiteSpace: 'normal',
+          border: '1px solid #e0e0e0',
+          animation: 'pulse 2s infinite',
+          position: 'relative',
+          textAlign: 'center',
+          lineHeight: '1.4',
+          maxWidth: '180px'
         }}>
-          Have questions? <br /> We're available on WhatsApp!
+          Have questions?<br />We're available on WhatsApp!
+          {/* Message arrow */}
+          <div style={{
+            position: 'absolute',
+            right: '-8px',
+            top: '50%',
+            transform: 'translateY(-50%)',
+            width: '0',
+            height: '0',
+            borderLeft: '8px solid #fff',
+            borderTop: '6px solid transparent',
+            borderBottom: '6px solid transparent'
+          }}></div>
         </div>
-      )}
-      <button
-        className="whatsapp-button whatsapp-blink"
-        onClick={handleClick}
-        aria-label="Contact on WhatsApp"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: 48,
-          height: 48,
-          background: '#25D366',
-          borderRadius: '50%',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-          border: 'none',
-          cursor: 'pointer',
-          color: 'white',
-          fontSize: 28
-        }}
-      >
-        <i className="fab fa-whatsapp"></i>
-      </button>
+
+        {/* WhatsApp button */}
+        <button
+          className="whatsapp-button"
+          onClick={handleClick}
+          aria-label="Contact on WhatsApp"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '56px',
+            height: '56px',
+            background: '#25D366',
+            borderRadius: '50%',
+            boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)',
+            border: 'none',
+            cursor: 'pointer',
+            color: 'white',
+            fontSize: '28px',
+            transition: 'all 0.3s ease',
+            animation: 'bounce 2s infinite'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'scale(1.1)';
+            e.target.style.boxShadow = '0 6px 20px rgba(37, 211, 102, 0.6)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'scale(1)';
+            e.target.style.boxShadow = '0 4px 12px rgba(37, 211, 102, 0.4)';
+          }}
+        >
+          <i className="fab fa-whatsapp"></i>
+        </button>
+      </div>
     </div>
   );
 }
 
 function AppContent() {
-  const { isDarkTheme } = useTheme();
 
   return (
     <div className="app">

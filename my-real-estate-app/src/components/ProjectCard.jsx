@@ -7,8 +7,26 @@ const ProjectCard = ({ project }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
-  const handleCardClick = () => {
+  const handleCardClick = (e) => {
+    // Prevent event bubbling
+    e.stopPropagation();
+
+    // Add haptic feedback for mobile devices
+    if ('vibrate' in navigator) {
+      navigator.vibrate(50);
+    }
+
     navigate(`/projects/${project.slug}`);
+  };
+
+  const handleTouchStart = (e) => {
+    // Add visual feedback for touch start
+    e.currentTarget.style.transform = 'scale(0.98)';
+  };
+
+  const handleTouchEnd = (e) => {
+    // Reset visual feedback
+    e.currentTarget.style.transform = '';
   };
 
   const getStatusColor = (status) => {
@@ -25,7 +43,15 @@ const ProjectCard = ({ project }) => {
   };
 
   return (
-    <div className="project-card" onClick={handleCardClick}>
+    <div
+      className="project-card"
+      onClick={handleCardClick}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      role="button"
+      tabIndex={0}
+      aria-label={`View details for ${project.name}`}
+    >
       {/* Image Container */}
       <div className="project-card-image-container">
         {!imageLoaded && !imageError && (
