@@ -139,13 +139,13 @@ const About = () => {
   return (
     <div className="main-content about-page">
       {/* Hero Section */}
-      <section className="hero-section" style={{ 
+      <section className="hero-section" style={{
         background: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)',
         minHeight: '60vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'var(--text-inverse)',
+        color: '#ffffff',
         textAlign: 'center'
       }}>
         <div className="container">
