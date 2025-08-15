@@ -2,6 +2,8 @@
 
 .contact-page {
   background: var(--bg-primary);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Main Contact Grid */
