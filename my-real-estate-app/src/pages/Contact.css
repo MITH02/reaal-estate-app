@@ -4,6 +4,14 @@
   background: var(--bg-primary);
 }
 
+/* Main Contact Grid */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
 /* Contact Information Cards */
 .contact-info-grid {
   display: grid;
