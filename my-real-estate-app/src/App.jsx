@@ -94,8 +94,7 @@ function WhatsAppBlinkButton() {
           animation: 'pulse 2s infinite',
           position: 'relative'
         }}>
-          <span style={{ fontSize: '16px', marginRight: '6px' }}>👋</span>
-          Hi! We are here to help
+          Have questions?<br />We're available on WhatsApp!
           {/* Message arrow */}
           <div style={{
             position: 'absolute',
