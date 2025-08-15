@@ -11,7 +11,6 @@ const projects = [
     status: "Upcoming",
     type: "Residential",
     features: ["3BHK Apartments", "6500 Sq.Ft Plot", "G+7 Floors", "7+ Amenities"],
-    location: "Prime Location",
     price: "Contact for Pricing"
   },
   {
@@ -23,7 +22,6 @@ const projects = [
     status: "Completed",
     type: "Residential",
     features: ["2&3BHK Apartments", "Premium Finishes", "Modern Design", "Security"],
-    location: "Central Area",
     price: "Starting ₹65L Onwards"
   },
   {
@@ -35,7 +33,6 @@ const projects = [
     status: "Completed",
     type: "Residential",
     features: ["2&3BHK Units", "Classic Design", "Quality Construction", "Garden Area"],
-    location: "Suburban Area",
     price: "Starting ₹90L Onwards"
   },
   {
@@ -47,7 +44,6 @@ const projects = [
     status: "Completed",
     type: "Residential",
     features: ["Luxury Units", "Panoramic Views", "Premium Amenities", "Parking"],
-    location: "City Center",
     price: "Starting ₹95L"
   },
   {
@@ -56,11 +52,10 @@ const projects = [
     description: "Sophisticated living spaces with elegant design and modern conveniences",
     image: "/images/buildings/building1.jpg",
     slug: "vishal-elegance",
-    status: "Completed",
+    status: "Upcoming",
     type: "Residential",
     features: ["Elegant Design", "Modern Conveniences", "Quality Materials", "Vastu Compliant"],
-    location: "Peaceful Area",
-    price: "Starting ₹40L"
+    price: "Starting ₹95L"
   }
 ];
 
