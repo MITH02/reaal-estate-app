@@ -16,6 +16,7 @@ import VishalEleganceProject from "./pages/VishalEleganceProject";
 import FooterTest from "./pages/FooterTest";
 import "./App.css";
 import "./styles/MobileOptimizations.css";
+import "./styles/ProjectImageOptimizations.css";
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import ThemeToggle from './components/ThemeToggle';
 import Navbar from './components/Navbar';
