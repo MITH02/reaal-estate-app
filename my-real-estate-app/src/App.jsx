@@ -34,12 +34,22 @@ function WhatsAppBlinkButton() {
       const position = window.pageYOffset;
       setScrollPosition(position);
 
-      // Show button after scrolling 100px
-      setIsVisible(position > 100);
+      // Show button after scrolling 50px on mobile, 100px on desktop
+      const isMobile = window.innerWidth <= 768;
+      const threshold = isMobile ? 50 : 100;
+      setIsVisible(position > threshold);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll); // Also check on resize
+
+    // Initial check
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
 
   const handleClick = () => {
