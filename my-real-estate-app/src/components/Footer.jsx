@@ -183,20 +183,53 @@ const Footer = () => {
             <h4 className="footer-title">Contact Info</h4>
             <div className="contact-info">
               <div className="contact-item">
-                <span className="contact-icon">📍</span>
-                <p>{contactInfo.address}</p>
+                <span className="contact-icon">
+                  <i className="fas fa-map-marker-alt"></i>
+                </span>
+                <div className="contact-details">
+                  <p>{contactInfo.address.split('\n').map((line, index) => (
+                    <span key={index}>
+                      {line}
+                      {index < contactInfo.address.split('\n').length - 1 && <br />}
+                    </span>
+                  ))}</p>
+                </div>
               </div>
               <div className="contact-item">
-                <span className="contact-icon">📞</span>
-                <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
+                <span className="contact-icon">
+                  <i className="fas fa-phone"></i>
+                </span>
+                <div className="contact-details">
+                  <a href={`tel:${contactInfo.phone}`} className="contact-link">
+                    {contactInfo.phone}
+                  </a>
+                  {contactInfo.phone2 && (
+                    <>
+                      <br />
+                      <a href={`tel:${contactInfo.phone2}`} className="contact-link">
+                        {contactInfo.phone2}
+                      </a>
+                    </>
+                  )}
+                </div>
               </div>
               <div className="contact-item">
-                <span className="contact-icon">✉️</span>
-                <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+                <span className="contact-icon">
+                  <i className="fas fa-envelope"></i>
+                </span>
+                <div className="contact-details">
+                  <a href={`mailto:${contactInfo.email}`} className="contact-link">
+                    {contactInfo.email}
+                  </a>
+                </div>
               </div>
               <div className="contact-item">
-                <span className="contact-icon">🕒</span>
-                <p>{contactInfo.hours}</p>
+                <span className="contact-icon">
+                  <i className="fas fa-clock"></i>
+                </span>
+                <div className="contact-details">
+                  <p>{contactInfo.hours}</p>
+                </div>
               </div>
             </div>
           </div>
