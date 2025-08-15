@@ -25,54 +25,95 @@ import ScrollToTop from "./ScrollToTop";
 import './Responsive.css';
 
 function WhatsAppBlinkButton() {
-  // Always show the popup
-  const showMsg = true;
+  const [isVisible, setIsVisible] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset;
+      setScrollPosition(position);
+
+      // Show button after scrolling 100px
+      setIsVisible(position > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleClick = () => {
     const message = "Hi! I am interested in properties at Agastya Developers and Builders";
     const whatsappUrl = `https://wa.me/917559378178?text=${encodeURIComponent(message)}`;
-	window.location.href = whatsappUrl;
+    window.location.href = whatsappUrl;
   };
 
+  if (!isVisible) return null;
+
   return (
-    <div style={{ position: 'fixed', bottom: 24, right: 24, zIndex: 9999 }}>
-      {showMsg && (
-        <div style={{
-          position: 'absolute',
-          bottom: 60,
-          right: 0,
+    <div
+      className="whatsapp-floating-button"
+      style={{
+        position: 'absolute',
+        right: '20px',
+        top: Math.max(scrollPosition + window.innerHeight - 100, scrollPosition + 200) + 'px',
+        zIndex: 9999,
+        transition: 'top 0.3s ease-out'
+      }}
+    >
+      <div style={{
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '12px'
+      }}>
+        {/* Message popup */}
+        <div className="whatsapp-message" style={{
           background: '#fff',
           color: '#222',
-          borderRadius: 8,
-          padding: '8px 16px',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-          fontSize: 14,
-          whiteSpace: 'nowrap'
+          borderRadius: '12px',
+          padding: '8px 12px',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+          fontSize: '14px',
+          whiteSpace: 'nowrap',
+          border: '1px solid #e0e0e0',
+          animation: 'pulse 2s infinite'
         }}>
-          Have questions? <br /> We're available on WhatsApp!
+          💬 Chat with us!
         </div>
-      )}
-      <button
-        className="whatsapp-button whatsapp-blink"
-        onClick={handleClick}
-        aria-label="Contact on WhatsApp"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          width: 48,
-          height: 48,
-          background: '#25D366',
-          borderRadius: '50%',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
-          border: 'none',
-          cursor: 'pointer',
-          color: 'white',
-          fontSize: 28
-        }}
-      >
-        <i className="fab fa-whatsapp"></i>
-      </button>
+
+        {/* WhatsApp button */}
+        <button
+          className="whatsapp-button"
+          onClick={handleClick}
+          aria-label="Contact on WhatsApp"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '56px',
+            height: '56px',
+            background: '#25D366',
+            borderRadius: '50%',
+            boxShadow: '0 4px 12px rgba(37, 211, 102, 0.4)',
+            border: 'none',
+            cursor: 'pointer',
+            color: 'white',
+            fontSize: '28px',
+            transition: 'all 0.3s ease',
+            animation: 'bounce 2s infinite'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'scale(1.1)';
+            e.target.style.boxShadow = '0 6px 20px rgba(37, 211, 102, 0.6)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'scale(1)';
+            e.target.style.boxShadow = '0 4px 12px rgba(37, 211, 102, 0.4)';
+          }}
+        >
+          <i className="fab fa-whatsapp"></i>
+        </button>
+      </div>
     </div>
   );
 }
