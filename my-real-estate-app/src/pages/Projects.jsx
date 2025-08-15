@@ -24,37 +24,37 @@ const projects = [
     type: "Residential",
     features: ["2&3BHK Apartments", "Premium Finishes", "Modern Design", "Security"],
     location: "Central Area",
-    price: "Starting ₹45L"
+    price: "Starting ₹65L Onwards"
   },
   {
     id: 3,
     name: "Vishal Classic",
     description: "Elegant homes designed for comfortable and sophisticated living",
-    image: "/images/VishalClassicImage1.jpg",
+    image: "/images/buildings/building2.jpg",
     slug: "vishal-classic",
     status: "Completed",
     type: "Residential",
     features: ["2&3BHK Units", "Classic Design", "Quality Construction", "Garden Area"],
     location: "Suburban Area",
-    price: "Starting ₹35L"
+    price: "Starting ₹90L Onwards"
   },
   {
     id: 4,
     name: "Vishal Pinnacle",
     description: "Luxury residential tower with panoramic views and premium amenities",
-    image: "/images/VishalPinnacleImage1.jpg",
+    image: "/images/buildings/building3.jpg",
     slug: "vishal-pinnacle",
     status: "Completed",
     type: "Residential",
     features: ["Luxury Units", "Panoramic Views", "Premium Amenities", "Parking"],
     location: "City Center",
-    price: "Starting ₹55L"
+    price: "Starting ₹95L"
   },
   {
     id: 5,
     name: "Vishal Elegance",
     description: "Sophisticated living spaces with elegant design and modern conveniences",
-    image: "/images/VishalEnrichImage2.jpg",
+    image: "/images/buildings/building4.jpg",
     slug: "vishal-elegance",
     status: "Completed",
     type: "Residential",
