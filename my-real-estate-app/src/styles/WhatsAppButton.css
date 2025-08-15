@@ -2,6 +2,7 @@
 
 .whatsapp-floating-button {
   pointer-events: none;
+  z-index: 9999;
 }
 
 .whatsapp-floating-button > div {
@@ -10,7 +11,9 @@
 
 .whatsapp-message {
   opacity: 0;
-  animation: fadeInMessage 3s ease-in-out infinite;
+  animation: fadeInMessage 4s ease-in-out infinite;
+  font-weight: 500;
+  font-family: var(--font-primary);
 }
 
 .whatsapp-button {
