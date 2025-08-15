@@ -117,9 +117,8 @@
   padding: var(--space-6);
   box-shadow: var(--shadow-xl);
   border: 1px solid var(--border-primary);
-  height: fit-content;
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
+  width: 100%;
+  min-height: fit-content;
 }
 
 .contact-form-wrapper {
