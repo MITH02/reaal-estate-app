@@ -6,7 +6,6 @@ const Home = () => {
   const videoRef = useRef(null);
   const [statsVisible, setStatsVisible] = useState(false);
   const [videoError, setVideoError] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,12 +66,6 @@ const Home = () => {
     navigate('/about');
   };
 
-  const handleSoundToggle = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
-    }
-  };
 
   const socialLinks = {
     instagram: 'https://www.instagram.com/agastyabuildersanddevelopers',
@@ -159,20 +152,6 @@ const Home = () => {
           />
         )}
         
-        {/* Sound Toggle Button - only show when video is working */}
-        {!videoError && (
-          <button
-            className="sound-toggle"
-            onClick={handleSoundToggle}
-            aria-label={isMuted ? 'Unmute video' : 'Mute video'}
-          >
-            {isMuted ? (
-              <span role="img" aria-label="muted">🔇</span>
-            ) : (
-              <span role="img" aria-label="sound">🔊</span>
-            )}
-          </button>
-        )}
         
         {/* Overlay Content */}
         <div className="video-overlay-content">
