@@ -95,10 +95,12 @@ const Navbar = () => {
           ))}
         </div>
 
-        <button 
-          className="hamburger mobile-only" 
-          onClick={handleMenuToggle} 
+        <button
+          className="hamburger mobile-only"
+          onClick={handleMenuToggle}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          type="button"
         >
           <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
           <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
