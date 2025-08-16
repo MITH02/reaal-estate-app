@@ -8,10 +8,16 @@
 
 /* Improved touch targets */
 .btn, .nav-link, .project-card, .filter-button, .theme-toggle, .whatsapp-button,
-.sound-toggle, .social-link, .footer-link, .hero-btn, .cta-button {
+.sound-toggle, .social-link, .footer-link, .hero-btn, .cta-button, .newsletter-button,
+.newsletter-input, .legal-link, .contact-link, .back-to-top {
   min-height: 48px;
-  min-width: 48px;
   position: relative;
+}
+
+.btn, .nav-link, .filter-button, .theme-toggle, .whatsapp-button,
+.sound-toggle, .social-link, .hero-btn, .cta-button, .newsletter-button,
+.legal-link, .back-to-top {
+  min-width: 48px;
 }
 
 /* Enhanced button touch areas */
