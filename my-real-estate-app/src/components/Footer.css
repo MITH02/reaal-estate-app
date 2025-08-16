@@ -322,6 +322,9 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-item {
@@ -346,6 +349,11 @@
 .contact-details {
   flex: 1;
   padding-top: var(--space-1);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .contact-details p {
@@ -362,6 +370,11 @@
   transition: color var(--transition-fast);
   display: inline-block;
   margin-bottom: var(--space-1);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .contact-link:hover {
@@ -526,6 +539,8 @@
     text-align: center;
     box-sizing: border-box;
     padding: 0 var(--space-2);
+    min-width: 0;
+    overflow: hidden;
   }
 
   .footer-company {
@@ -548,6 +563,10 @@
     background: rgba(255, 255, 255, 0.05);
     border-radius: var(--radius-lg);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .footer-brand {
@@ -565,12 +584,19 @@
   .newsletter-input {
     min-height: 48px;
     font-size: var(--text-base);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .newsletter-button {
     min-height: 48px;
     padding: var(--space-4) var(--space-6);
     font-size: var(--text-base);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
   }
 
   .social-links {
@@ -720,6 +746,11 @@
 @media (max-width: 480px) {
   .footer-container {
     padding: 0 var(--space-3);
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .footer-content {
@@ -788,6 +819,11 @@
 
   .contact-details {
     font-size: var(--text-sm);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .contact-item {
@@ -833,6 +869,11 @@
 @media (max-width: 375px) {
   .footer-container {
     padding: 0 var(--space-2);
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 
   .footer-content {
@@ -880,6 +921,11 @@
 
   .contact-details {
     font-size: 12px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+    min-width: 0;
   }
 
   .footer-title {

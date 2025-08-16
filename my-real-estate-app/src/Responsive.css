@@ -26,11 +26,30 @@ html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
   min-width: 320px;
+  max-width: 100vw;
+  width: 100%;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global container fixes */
+.app,
+.main-content {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Ensure all interactive elements are touch-friendly */
@@ -687,11 +706,108 @@ a, button, input, select, textarea, .btn, .nav-link, .project-card {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
   }
-  
+
   .project-card-image,
   .hero-video,
   .building-image img {
     will-change: auto;
+  }
+
+  /* Enhanced footer mobile fixes */
+  .footer {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+  }
+
+  .footer-container {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .footer-content {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .footer-column {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  /* Enhanced text handling for mobile */
+  .contact-details,
+  .contact-link,
+  .newsletter-section p,
+  .company-description,
+  .social-name {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Specific email and URL handling */
+  a[href^="mailto:"],
+  a[href^="tel:"],
+  .contact-link {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  /* Newsletter and form element fixes */
+  .newsletter-input,
+  .newsletter-button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .newsletter-input-group {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  /* Contact item specific fixes */
+  .contact-item {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .contact-details {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Social links fixes */
+  .social-links {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .social-link {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 }
 
