@@ -403,29 +403,8 @@
 }
 
 @media (max-width: 480px) {
-  .navbar-container {
-    padding: 0 var(--space-3);
-  }
-
-  .brand-name {
-    font-size: var(--text-lg);
-  }
-
-  .logo {
-    height: 30px;
-  }
-
-  .navbar-scrolled .logo {
-    height: 28px;
-  }
-
-  .mobile-nav-link {
-    font-size: 2rem;
-    padding: 1.2rem 1.5rem;
-  }
-
-  .mobile-menu-content {
-    padding: 1.5rem;
+  .navbar {
+    display: none !important;
   }
 }
 
