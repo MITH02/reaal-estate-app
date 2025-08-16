@@ -265,7 +265,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transform: translateX(-100%);
@@ -273,6 +273,10 @@
   z-index: 1050;
   visibility: hidden;
   opacity: 0;
+}
+
+[data-theme="dark"] .mobile-menu {
+  background: rgba(15, 23, 42, 0.95);
 }
 
 .mobile-menu-open {
