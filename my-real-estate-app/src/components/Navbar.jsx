@@ -113,6 +113,18 @@ const Navbar = () => {
 
         <div className={`mobile-menu ${menuOpen ? 'mobile-menu-open' : ''}`}>
           <div className="mobile-menu-content">
+            <div style={{
+              position: 'absolute',
+              top: '20px',
+              left: '20px',
+              background: 'red',
+              color: 'white',
+              padding: '10px',
+              fontSize: '16px',
+              fontWeight: 'bold'
+            }}>
+              Menu is {menuOpen ? 'OPEN' : 'CLOSED'}
+            </div>
             {navItems.map((item) => (
               <Link
                 key={item.path}
