@@ -95,6 +95,22 @@ html {
     padding-left: var(--space-4);
     padding-right: var(--space-4);
     box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* Ensure no elements overflow container */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Fix for elements that tend to overflow */
+  .newsletter-form, .contact-item, .social-link,
+  .footer-column, .footer-links, .legal-links {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   /* Fix section containers */
@@ -114,11 +130,22 @@ html {
     line-height: 1.2;
   }
   
-  /* Prevent text overflow */
-  h1, h2, h3, h4, h5, h6, p, .project-card-title, .section-title {
+  /* Prevent text overflow - Enhanced */
+  h1, h2, h3, h4, h5, h6, p, .project-card-title, .section-title,
+  .contact-link, .contact-details, .newsletter-input, .footer-title,
+  .company-description, .newsletter-section p, .social-name {
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* Specific email and long text handling */
+  a[href^="mailto:"], .contact-link, .email-text {
+    word-break: break-all;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -374,9 +401,33 @@ html {
     right: calc(var(--space-4) + env(safe-area-inset-right));
   }
 
-  /* Fix any overflow issues */
+  /* Fix any overflow issues - Enhanced */
   * {
     max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Specific fixes for text elements that commonly overflow */
+  p, span, div, a, h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+  }
+
+  /* Email and URL specific handling */
+  a[href^="mailto:"], a[href^="http:"], a[href^="https:"], a[href^="tel:"] {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  /* Prevent horizontal scrolling */
+  .footer, .footer-container, .footer-content, .footer-column {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     box-sizing: border-box;
   }
 }
