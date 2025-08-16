@@ -446,7 +446,12 @@
   }
 
   .mobile-nav-link {
-    font-size: var(--text-2xl);
+    font-size: 2rem;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .mobile-menu-content {
+    padding: 1.5rem;
   }
 }
 
