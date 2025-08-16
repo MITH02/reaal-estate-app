@@ -12,7 +12,7 @@
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(37, 99, 235, 0.1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  z-index: var(--z-fixed);
+  z-index: 10000;
   transition: all var(--transition-base);
 }
 
