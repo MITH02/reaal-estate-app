@@ -351,15 +351,15 @@
   }
 
   .desktop-only {
-    display: none;
+    display: none !important;
   }
 
   .mobile-only {
-    display: flex;
+    display: flex !important;
   }
 
   .hamburger {
-    display: flex;
+    display: flex !important;
   }
 
   .brand-name {
