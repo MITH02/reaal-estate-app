@@ -66,12 +66,6 @@ const Home = () => {
     navigate('/about');
   };
 
-  const handleSoundToggle = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
-    }
-  };
 
   const socialLinks = {
     instagram: 'https://www.instagram.com/agastyabuildersanddevelopers',
