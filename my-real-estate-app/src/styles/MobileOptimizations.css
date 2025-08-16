@@ -465,8 +465,199 @@ html {
   .hero-video {
     preload: metadata;
   }
-  
+
   .project-card-image {
     loading: lazy;
+  }
+
+  /* Additional overflow fixes for mobile */
+  .footer {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .footer-content {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .footer-column {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  /* Newsletter section mobile fixes */
+  .newsletter-section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .newsletter-input-group {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .newsletter-input,
+  .newsletter-button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Contact info mobile fixes */
+  .contact-info {
+    width: 100%;
+    max-width: 100%;
+    gap: var(--space-4);
+  }
+
+  .contact-item {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .contact-details {
+    flex: 1;
+    min-width: 0;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .contact-link {
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Social links mobile fixes */
+  .social-links {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .social-link {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    min-height: 48px;
+  }
+
+  .social-name {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+}
+
+/* Additional ultra-small device fixes */
+@media (max-width: 320px) {
+  .footer-container {
+    padding: 0 var(--space-2);
+    width: 100%;
+    max-width: 100vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .footer-content {
+    gap: var(--space-4);
+    padding: var(--space-8) 0 var(--space-6);
+  }
+
+  .footer-column {
+    padding: 0;
+  }
+
+  .contact-item {
+    padding: var(--space-2);
+    gap: var(--space-2);
+  }
+
+  .contact-details {
+    font-size: 11px;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+  }
+
+  .newsletter-input,
+  .newsletter-button {
+    font-size: var(--text-sm);
+    min-height: 44px;
+  }
+
+  .social-link {
+    padding: var(--space-2);
+    min-height: 44px;
+  }
+
+  .social-name {
+    font-size: var(--text-sm);
+  }
+
+  .footer-title {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-3);
+  }
+
+  .company-description {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .newsletter-section h4,
+  .social-section h4 {
+    font-size: var(--text-base);
+  }
+
+  .newsletter-section p {
+    font-size: 12px;
+  }
+}
+
+/* Text Selection Improvements */
+@media (max-width: 767px) {
+  /* Allow text selection for contact info */
+  .contact-details, .contact-link {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+
+  /* But prevent selection on interactive elements */
+  .newsletter-button, .social-link, .footer-link {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
