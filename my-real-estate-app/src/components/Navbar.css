@@ -233,12 +233,16 @@
 }
 
 .hamburger-line {
-  width: 24px;
-  height: 2px;
-  background: var(--text-primary);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 25px;
+  height: 3px;
+  background: #333;
+  transition: all 0.3s ease;
   transform-origin: center;
-  border-radius: 1px;
+  border-radius: 2px;
+}
+
+[data-theme="dark"] .hamburger-line {
+  background: #fff;
 }
 
 .hamburger-line:not(:last-child) {
