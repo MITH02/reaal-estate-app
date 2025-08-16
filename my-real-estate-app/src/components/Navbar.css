@@ -303,6 +303,7 @@
 .mobile-menu-open {
   opacity: 1 !important;
   visibility: visible !important;
+  pointer-events: auto !important;
   transform: scale(1) !important;
 }
 
