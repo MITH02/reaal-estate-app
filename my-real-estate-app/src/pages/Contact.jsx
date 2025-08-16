@@ -130,7 +130,7 @@ const Contact = () => {
     {
       icon: '📍',
       title: 'Visit Our Office',
-      primary: 'BPCL Petrol pump, Matey Chowak',
+      primary: 'BPCL Petrol pump, Matey Chowk',
       secondary: 'Maharashtra 440010, India',
       action: 'Get Directions'
     },
@@ -460,7 +460,7 @@ const Contact = () => {
           <div className="office-info">
             <div className="office-details">
               <h3>Agastya Builders & Developers</h3>
-              <p>BPCL Petrol pump, Matey Chowak, Maharashtra 440010</p>
+              <p>BPCL Petrol pump, Matey Chowk, Maharashtra 440010</p>
               <div className="office-hours">
                 <h4>Office Hours</h4>
                 <p>Monday - Saturday: 10:00 AM - 7:00 PM</p>
