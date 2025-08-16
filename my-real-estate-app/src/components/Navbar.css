@@ -260,7 +260,7 @@
 /* When menu is open, create X shape */
 .hamburger-line.open:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
-  background: var(--color-primary);
+  background: #ffffff;
 }
 
 .hamburger-line.open:nth-child(2) {
@@ -270,7 +270,7 @@
 
 .hamburger-line.open:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
-  background: var(--color-primary);
+  background: #ffffff;
 }
 
 /* Mobile Menu - Full Screen Overlay */
