@@ -6,7 +6,6 @@ const Home = () => {
   const videoRef = useRef(null);
   const [statsVisible, setStatsVisible] = useState(false);
   const [videoError, setVideoError] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
