@@ -58,6 +58,10 @@
   font-size: var(--text-2xl);
 }
 
+.contact-details {
+  text-align: center;
+}
+
 .contact-details h3 {
   font-size: var(--text-lg);
   font-weight: 600;
