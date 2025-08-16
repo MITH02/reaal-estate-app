@@ -270,6 +270,7 @@
   width: 100vw !important;
   height: 100vh !important;
   background: #ffffff !important;
+  border: 5px solid red !important;
   z-index: 10000 !important;
   transition: left 0.3s ease !important;
   display: flex !important;
