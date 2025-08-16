@@ -301,12 +301,16 @@
   font-family: var(--font-display);
   font-size: var(--text-3xl);
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-primary);
   text-decoration: none;
   transition: all var(--transition-base);
   position: relative;
   padding: var(--space-4);
   text-align: center;
+}
+
+[data-theme="dark"] .mobile-nav-link {
+  color: #ffffff;
 }
 
 .mobile-nav-link:hover,
