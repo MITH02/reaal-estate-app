@@ -104,21 +104,21 @@ const Home = () => {
 
   const testimonials = [
     {
-      name: 'Rajesh Kumar',
+      name: 'Akshay Bukkawar',
       role: 'Homeowner',
-      content: 'Exceptional quality and timely delivery. Our dream home became reality with Agastya Builders.',
+      content: 'Agastya Builders delivered our dream home with exceptional quality and on time. Truly grateful for their professionalism and commitment.',
       rating: 5
     },
     {
-      name: 'Priya Sharma',
-      role: 'Property Investor',
-      content: 'Professional service and attention to detail. Highly recommend for premium construction projects.',
+      name: 'Surekha Kathalkar',
+      role: 'Homeowner',
+	  content: 'Very professional service with great attention to detail. I highly recommend Agastya Builders for premium construction projects.',
       rating: 5
     },
     {
-      name: 'Amit Patel',
-      role: 'Business Owner',
-      content: 'Outstanding craftsmanship and modern designs. Best builders in the region.',
+      name: 'Riya Chakraborty',
+      role: 'Homeowner',
+	  content: 'Outstanding craftsmanship and modern designs. Truly one of the best builders in the region!',
       rating: 5
     }
   ];

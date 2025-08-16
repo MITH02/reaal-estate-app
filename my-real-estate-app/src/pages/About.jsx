@@ -191,7 +191,7 @@ const About = () => {
                 </div>
               ) : (
                 <img
-                  src="https://via.placeholder.com/400x500/2563eb/ffffff?text=Founder"
+                  src="/images/Founder.jpg"
                   alt="Badal Mahendrakumar Matey - Founder"
                   loading="lazy"
                   onLoad={() => setFounderImageLoaded(true)}
