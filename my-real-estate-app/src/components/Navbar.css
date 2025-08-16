@@ -275,6 +275,7 @@
 
 .mobile-menu-open {
   transform: translateX(0);
+  visibility: visible;
 }
 
 .mobile-menu-content {
