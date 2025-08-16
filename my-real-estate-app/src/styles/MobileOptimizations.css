@@ -163,6 +163,8 @@ html {
   .hamburger {
     padding: 12px;
     cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
   }
   
   .mobile-nav-link {
