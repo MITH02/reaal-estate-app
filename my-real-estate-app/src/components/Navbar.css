@@ -228,7 +228,7 @@
   border: none;
   cursor: pointer;
   padding: 8px;
-  z-index: var(--z-modal);
+  z-index: 1052;
   position: relative;
 }
 
