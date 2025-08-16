@@ -269,8 +269,8 @@
   left: -100vw !important;
   width: 100vw !important;
   height: 100vh !important;
-  background: #ffffff !important;
-  border: 5px solid red !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(10px) !important;
   z-index: 10000 !important;
   transition: left 0.3s ease !important;
   display: flex !important;
