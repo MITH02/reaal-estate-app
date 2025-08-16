@@ -231,27 +231,36 @@
   padding: 8px;
   z-index: 9999;
   position: relative;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger:hover {
+  background: rgba(37, 99, 235, 0.1);
 }
 
 .hamburger-line {
   width: 25px;
   height: 3px;
-  background: #333;
-  transition: all 0.3s ease;
+  background: var(--color-primary);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   transform-origin: center;
   border-radius: 2px;
+  position: relative;
 }
 
 [data-theme="dark"] .hamburger-line {
-  background: #fff;
+  background: var(--text-primary);
 }
 
 .hamburger-line:not(:last-child) {
   margin-bottom: 5px;
 }
 
+/* When menu is open, create X shape */
 .hamburger-line.open:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
+  background: var(--color-primary);
 }
 
 .hamburger-line.open:nth-child(2) {
@@ -260,7 +269,8 @@
 }
 
 .hamburger-line.open:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
+  background: var(--color-primary);
 }
 
 /* Mobile Menu */
