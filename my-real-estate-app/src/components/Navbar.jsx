@@ -41,6 +41,8 @@ const Navbar = () => {
   const handleLinkClick = () => {
     setMenuOpen(false);
     document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.width = '';
   };
 
   // Close menu on escape key
