@@ -278,12 +278,12 @@
   justify-content: center !important;
 }
 
-[data-theme="dark"] .mobile-menu {
-  background: rgba(15, 23, 42, 0.98);
+[data-theme="dark"] .navbar .mobile-menu {
+  background: rgba(15, 23, 42, 0.98) !important;
 }
 
-.mobile-menu-open {
-  transform: translateX(0);
+.navbar .mobile-menu.mobile-menu-open {
+  transform: translateX(0) !important;
 }
 
 .mobile-menu-content {
