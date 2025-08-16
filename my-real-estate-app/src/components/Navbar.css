@@ -398,7 +398,41 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar {
+    display: block !important;
+    height: 60px;
+  }
+
+  .navbar-container {
+    padding: 0 var(--space-4);
+    justify-content: flex-start;
+  }
+
+  .nav-brand {
+    display: flex !important;
+  }
+
+  .desktop-only {
     display: none !important;
+  }
+
+  .brand-name {
+    font-size: var(--text-lg);
+  }
+
+  .brand-subtitle {
+    font-size: var(--text-xs);
+  }
+
+  .logo {
+    height: 32px;
+  }
+
+  .navbar-scrolled .logo {
+    height: 30px;
+  }
+
+  .navbar-scrolled {
+    height: 55px;
   }
 }
 
