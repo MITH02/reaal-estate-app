@@ -18,7 +18,11 @@ const Navbar = () => {
   }, []);
 
   const handleMenuToggle = () => {
-    setMenuOpen((open) => !open);
+    console.log('Hamburger clicked! Current menuOpen:', menuOpen);
+    setMenuOpen((open) => {
+      console.log('Previous state:', open, 'New state:', !open);
+      return !open;
+    });
 
     // Add haptic feedback for mobile devices
     if ('vibrate' in navigator) {
