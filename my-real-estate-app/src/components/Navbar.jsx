@@ -103,32 +103,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        <button
-          className="hamburger mobile-only"
-          onClick={handleMenuToggle}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-          type="button"
-        >
-          <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
-          <span className={`hamburger-line ${menuOpen ? 'open' : ''}`}></span>
-        </button>
-
-        <div className={`mobile-menu ${menuOpen ? 'mobile-menu-open' : ''}`}>
-          <div className="mobile-menu-content">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`mobile-nav-link ${location.pathname === item.path ? 'active' : ''}`}
-                onClick={handleLinkClick}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
 
       </div>
     </nav>
