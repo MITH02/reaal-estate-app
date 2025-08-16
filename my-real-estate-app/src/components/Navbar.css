@@ -401,15 +401,7 @@
     padding: 0 var(--space-4);
   }
 
-  .desktop-only {
-    display: none !important;
-  }
-
-  .mobile-only {
-    display: flex !important;
-  }
-
-  .hamburger {
+  .nav-links {
     display: flex !important;
   }
 
