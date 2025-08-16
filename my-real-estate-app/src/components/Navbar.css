@@ -227,8 +227,9 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 8px;
   z-index: var(--z-modal);
+  position: relative;
 }
 
 .hamburger-line {
