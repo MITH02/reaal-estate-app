@@ -20,7 +20,7 @@ const Footer = () => {
     {
       platform: 'Instagram',
       icon: 'fab fa-instagram',
-      url: 'https://www.instagram.com/agastyabuildersanddevelopers',
+      url: 'https://www.instagram.com/agastyabuilder/',
       handle: '@agastyabuildersanddevelopers',
       color: '#E4405F'
     },

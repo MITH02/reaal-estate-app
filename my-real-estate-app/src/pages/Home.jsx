@@ -68,7 +68,7 @@ const Home = () => {
 
 
   const socialLinks = {
-    instagram: 'https://www.instagram.com/agastyabuildersanddevelopers',
+    instagram: 'https://www.instagram.com/agastyabuilder/',
     linkedin: 'https://www.linkedin.com/company/agastyabuildersanddevelopers',
     facebook: 'https://www.facebook.com/agastyabuildersanddevelopers',
     youtube: 'https://www.youtube.com/@agastyabuildersanddevelopers'

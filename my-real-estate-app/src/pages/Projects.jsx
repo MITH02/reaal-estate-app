@@ -4,20 +4,9 @@ import ProjectCard from "../components/ProjectCard";
 const projects = [
   {
     id: 1,
-    name: "Vishal Spandan",
-    description: "Luxurious 3BHK apartments with contemporary design and world-class amenities",
-    image: "/images/buildings/building1.jpg",
-    slug: "vishal-spandan",
-    status: "Upcoming",
-    type: "Residential",
-    features: ["3BHK Apartments", "6500 Sq.Ft Plot", "G+7 Floors", "7+ Amenities"],
-    price: "Contact for Pricing"
-  },
-  {
-    id: 2,
     name: "Vishal Enrich",
     description: "Premium residential complex with modern architecture and luxury finishes",
-    image: "/images/buildings/building2.jpg",
+    image: "/images/buildings/building1.jpg",
     slug: "vishal-enrich",
     status: "Completed",
     type: "Residential",
@@ -25,10 +14,10 @@ const projects = [
     price: "Starting ₹65L Onwards"
   },
   {
-    id: 3,
+    id: 2,
     name: "Vishal Classic",
     description: "Elegant homes designed for comfortable and sophisticated living",
-    image: "/images/buildings/building3.jpg",
+    image: "/images/buildings/building2.jpg",
     slug: "vishal-classic",
     status: "Completed",
     type: "Residential",
@@ -36,10 +25,10 @@ const projects = [
     price: "Starting ₹90L Onwards"
   },
   {
-    id: 4,
+    id: 3,
     name: "Vishal Pinnacle",
     description: "Luxury residential tower with panoramic views and premium amenities",
-    image: "/images/buildings/building4.jpg",
+    image: "/images/buildings/building3.jpg",
     slug: "vishal-pinnacle",
     status: "Completed",
     type: "Residential",
@@ -47,10 +36,10 @@ const projects = [
     price: "Starting ₹95L"
   },
   {
-    id: 5,
+    id: 4,
     name: "Vishal Elegance",
     description: "Sophisticated living spaces with elegant design and modern conveniences",
-    image: "/images/buildings/building1.jpg",
+    image: "/images/buildings/building4.jpg",
     slug: "vishal-elegance",
     status: "Upcoming",
     type: "Residential",
