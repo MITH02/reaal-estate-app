@@ -397,36 +397,8 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .navbar-container {
-    padding: 0 var(--space-4);
-  }
-
-  .desktop-only {
+  .navbar {
     display: none !important;
-  }
-
-  .mobile-only {
-    display: flex !important;
-  }
-
-  .hamburger {
-    display: flex !important;
-  }
-
-  .brand-name {
-    font-size: var(--text-xl);
-  }
-
-  .brand-subtitle {
-    font-size: var(--text-xs);
-  }
-
-  .logo {
-    height: 35px;
-  }
-
-  .navbar-scrolled .logo {
-    height: 32px;
   }
 }
 
