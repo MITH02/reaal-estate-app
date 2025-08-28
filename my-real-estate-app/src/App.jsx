@@ -54,7 +54,7 @@ function WhatsAppBlinkButton() {
 
   const handleClick = () => {
     const message = "Hi! I am interested in properties at Agastya Developers and Builders";
-    const whatsappUrl = `https://wa.me/917559378178?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/917558710676?text=${encodeURIComponent(message)}`;
     window.location.href = whatsappUrl;
   };
 
